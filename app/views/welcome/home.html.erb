@@ -1,0 +1,12 @@
+<h1> Welcome !</h1>
+
+<% if current_employee %>
+  <%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br> 
+<% else %>
+  <%= link_to 'Sign up', new_employee_registration_path %> <br> <br>
+  <%= link_to 'Sign in', new_employee_session_path %>
+<% end %>
+
+
+
+

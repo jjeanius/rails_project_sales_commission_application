@@ -13,6 +13,10 @@
 ActiveRecord::Schema.define(version: 2019_05_07_153456) do
 
   create_table "employees", force: :cascade do |t|
+    t.string "region"
+    t.string "name"
+    t.string "position"
+    t.boolean "admin", default: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

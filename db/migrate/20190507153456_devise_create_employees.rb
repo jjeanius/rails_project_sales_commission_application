@@ -4,6 +4,11 @@ class DeviseCreateEmployees < ActiveRecord::Migration[5.2]
   def change
     create_table :employees do |t|
       ## Database authenticatable
+      t.string :region
+      t.string :name
+      t.string :position
+      t.boolean :admin, :default => false
+
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
