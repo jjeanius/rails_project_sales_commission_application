@@ -1,0 +1,10 @@
+<h2> Employee List </h2>
+
+<ol>
+<% @employees.each do |employee| %> 
+<li> Name:  <%= employee.name %>  <br> 
+Region:  <%= employee.region %>  <br> 
+Job Tilte:  <%= employee.position %> </li> <br> 
+
+<% end %>
+</ol>
