@@ -1,10 +1,21 @@
+<%= link_to 'Main_Menu', root_path %>  * 
+<%= link_to 'Account Information', employees_path(@employee) %> *
+<%= link_to 'Edit Account', employees_path(@employee) %>
+
+
+<%= link_to 'Product', products_path %> *
+<%= link_to 'Sales', sales_path %>   * 
+
+<%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br> 
+
 <h2> Employee List </h2>
 
 <ol>
 <% @employees.each do |employee| %> 
-<li> Name:  <%= employee.name %>  <br> 
+<li> Name:  <%= link_to employee.name, employee_path(employee) %>  <br> 
 Region:  <%= employee.region %>  <br> 
 Job Tilte:  <%= employee.position %> </li> <br> 
 
 <% end %>
 </ol>
+

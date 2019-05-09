@@ -1,0 +1,16 @@
+<%= link_to 'Main_Menu', root_path %>  * 
+<%= link_to 'Account Information', employees_path(@employee) %> *
+<%= link_to 'Edit Account', employees_path(@employee) %>  *
+<%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br> 
+
+<h2> Product List </h2> <br>
+
+<ol>
+
+<% @products.each do|product| %> 
+  <li> Product Name: <%= link_to product.name, product_path(product) %> <br></li>
+        product Description: <%= product.description %> <br> <br></li>
+<% end %>
+</ol>
+<br>
+<br>

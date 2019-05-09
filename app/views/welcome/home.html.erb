@@ -2,7 +2,9 @@
 
 <% if current_employee %>
   <%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br> 
-  <%= link_to  'Account Information', @employee %>
+  <%= link_to  'Accounts Report', employees_path %><br> <br>
+  <%= link_to 'Product', products_path %> <br> <br>
+  <%= link_to 'Sales', sales_path %> <br> <br>
 
 
 

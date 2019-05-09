@@ -1,6 +1,9 @@
+require 'pry'
+
 class EmployeesController < ApplicationController
 
   def index
+    @employee = Employee.find_by(id: params[:id])
     @employees = Employee.all
   end
 
@@ -9,7 +12,8 @@ class EmployeesController < ApplicationController
   end
 
   def create
-    @employee = Employee.new(employee_params)    
+    @employee = Employee.new(employee_params)  
+    binding.pry
     if @employee.save
       session[:employee_id] = @employee.id
       redirect_to employee_path(@employee)
@@ -46,4 +50,4 @@ private
  
 
 end
-end
+

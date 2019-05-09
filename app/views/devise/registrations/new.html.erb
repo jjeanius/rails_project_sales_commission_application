@@ -3,19 +3,19 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="form-group">  
+  <div class="field">  
   <%= f.label :name %> 
-    <%= f.text_field :name, class: "form-control" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
 </div> <br>
 
-<div class="form-group">
+<div class="field">
   <%= f.label :region %> 
-  <%= f.text_field :region, class: "form-control" %>
+  <%= f.text_field :region, autofocus: true, autocomplete: "region" %>
 </div><br>
 
-<div class="form-group">
+<div class="field">
   <%=f.label :position %> 
-  <%= f.text_field :position, class: "form-control" %> 
+  <%= f.text_field :position, utofocus: true, autocomplete: "position"  %> 
 </div><br>
 
   <div class="field">
