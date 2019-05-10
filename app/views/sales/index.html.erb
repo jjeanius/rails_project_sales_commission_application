@@ -1,0 +1,22 @@
+<H2> Sales List </h2>
+
+<% @saless.each do |salez| %>
+<% if salez.employee = @current_employee %>
+<strong> Employee: </strong> <%= link_to salez.employee.name, employee_path(@current_employee) %><br>
+<strong> Product Name: </strong> <%= link_to salez.product_name, sales_url(salez) %> <br>
+<strong> Sales Amount: </strong> $ <%= salez.sales_amount %> <br>
+<strong> Sales Commission Rate: </strong> <%= salez.commission_rate %> % <br>
+<strong> Sales Commission Amount: </strong> $ <%= salez.commission_amount %> <br><br>
+<% else %>
+<strong> Employee: </strong> <%= salez.employee.name %>
+<strong> Product Name: </strong> <%= salez.product_name %> <br>
+<strong> Sales Amount: </strong> $ <%= salez.sales_amount %> <br>
+<strong> Sales Commission Rate: </strong> <%= salez.commission_rate %> % <br>
+<strong> Sales Commission Amount: </strong> $ <%= salez.commission_amount %> <br><br>
+<br>
+<% end %>
+<% end %>
+<br>
+<br>
+
+
