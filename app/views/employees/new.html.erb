@@ -1,0 +1,38 @@
+<h2> Please sign up: </h2><br>
+
+  <%= form_for @employee do |f| %>
+    <% if @employee.errors.any? %>
+    <div id="error_explanation">
+      <%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved: 
+    <ul>
+     <% @employee.errors.full_messages.each do |message| %>
+      <li> <%= message %> </li>
+  <% end %>
+  </ul>
+  </div>
+ <% end %> 
+ 
+
+<div class="form-group">  
+  <%= f.label :name %> 
+    <%= f.text_field :name, class: "form-control" %>
+</div>
+ <br>
+<div class="form-group">
+  <%= f.label :region %> 
+  <%= f.text_field :region, class: "form-control" %>
+</div>
+  <br>
+<div class="form-group">
+  <%=f.label :position %> 
+  <%= f.text_field :position, class: "form-control" %> 
+</div>
+  <br>
+<div class="form-group">
+  <%= f.label :password %> 
+  <%= f.password_field :password, class: "form-control" %> 
+</div>
+  <br>
+
+  <%= f.submit "Sumbit" %>
+<% end %>

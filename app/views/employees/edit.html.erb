@@ -1,0 +1,22 @@
+<%= form_for (@employee) do |f| %>
+
+<div class="form-group">
+  <strong> <%= f.label :name %> : </strong>
+    <%= f.text_field :name, class: "form-control"%> <br> <br>
+
+<div class="form-group">
+  <strong> <%= f.label :region %> : </strong>
+    <%= f.text_field :region, class: "form-control"%> <br> <br>
+
+<div class="form-group">  
+  <strong> <%= f.label :position %> : </strong>
+    <%= f.text_field :position, class: "form-control" %> <br> <br>
+</div>
+
+<br> 
+<div class="action">
+ <strong> <%= f.submit "Update Profile" %> </strong>
+</div>
+
+<% end %>
+<br> <br>

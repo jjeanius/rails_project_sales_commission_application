@@ -2,11 +2,6 @@ require 'pry'
 
 class EmployeesController < ApplicationController
 
-  def index
-    @employee = Employee.find_by(id: params[:id])
-    @employees = Employee.all
-  end
-
   def new
     @employee = Employee.new
   end
@@ -21,6 +16,14 @@ class EmployeesController < ApplicationController
       render :new
     end
   end
+
+  def index
+   # @employee = Employee.find_by(id: params[:id])
+    @employees = Employee.all
+    
+  end
+
+  
   
     def show
       @employee = Employee.find_by(id: params[:id])
