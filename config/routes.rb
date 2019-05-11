@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'welcome#home'
-  devise_for :employees
+devise_for :employees, :controllers => {registrations: 'registrations'}
 
   resources :employees
   resources :products

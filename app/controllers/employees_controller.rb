@@ -18,11 +18,8 @@ class EmployeesController < ApplicationController
   end
 
   def index
-   # @employee = Employee.find_by(id: params[:id])
     @employees = Employee.all
-    
   end
-
   
   
     def show
@@ -41,13 +38,18 @@ class EmployeesController < ApplicationController
           render :edit_employees_path
         end
 
-    end  
+    end 
+    
+    def destroy
+      @employee = Employee.find_by(id: params[:id]).destroy
+      render :index
+    end
 
 
 private
 
   def employee_params
-    params.require(:employee).permit(:employee, :name, :region, :position, :password, :password_confirmation, :admin)
+    params.require(:employee).permit(:employee, :name, :region, :position, :email, :password, :password_confirmation, :admin)
   end
 
  

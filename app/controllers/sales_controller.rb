@@ -2,8 +2,7 @@ class SalesController < ApplicationController
 
   def index
     @saless = Sales.all
-    @sales = Sales.new
-      render :index
+    render :index
   end
 
   def show

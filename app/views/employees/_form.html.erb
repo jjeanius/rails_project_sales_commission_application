@@ -1,4 +1,12 @@
-h2> Score Board </h2> <br> 
+<%= link_to 'Main_Menu', root_path %>  * 
+<%= link_to 'Edit Account', employees_path(@employee) %>
+<%= link_to 'Product', products_path %> *
+<%= link_to 'Sales', sales_path %>   * 
+
+<%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br> 
+
+
+<h2> Score Board </h2> <br> 
 
 <strong> Region: </strong> <%= @employee.region %> <br> <br>
 <strong> Name: </strong> <%= @employee.name %> <br> <br>
