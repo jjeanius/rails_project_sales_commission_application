@@ -2,29 +2,29 @@ require 'pry'
 
 class EmployeesController < ApplicationController
 
+  
+  def index
+    @employees = Employee.all
+  end
+    
   def new
     @employee = Employee.new
   end
 
   def create
     @employee = Employee.new(employee_params)  
-    binding.pry
-    if @employee.save
-      session[:employee_id] = @employee.id
+      if @employee.save
+        session[:employee_id] = @employee.id
       redirect_to employee_path(@employee)
     else
       render :new
     end
   end
 
-  def index
-    @employees = Employee.all
+   
+  def show
+    @employee = Employee.find_by(id: params[:id])
   end
-  
-  
-    def show
-      @employee = Employee.find_by(id: params[:id])
-    end
 
     def edit
       @employee = Employee.find_by(id: params[:id])
@@ -36,9 +36,8 @@ class EmployeesController < ApplicationController
           redirect_to @employee
         else
           render :edit_employees_path
-        end
-
-    end 
+    end
+  end 
     
     def destroy
       @employee = Employee.find_by(id: params[:id]).destroy

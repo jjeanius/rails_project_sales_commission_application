@@ -1,4 +1,14 @@
-<%= form_for (@employee) do |f| %>
+<%= link_to 'Main_Menu', root_path %>  * 
+<%= link_to 'Account Information', @employee %> *
+<%= link_to 'Product', products_path %> *
+<%= link_to 'Sales', sales_path %>   * 
+
+<%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br> 
+
+
+<h2> Edit Account </h2> <br>
+
+<%= form_for @employee, :method => :patch do |f| %>
 
 <div class="form-group">
   <strong> <%= f.label :name %> : </strong>

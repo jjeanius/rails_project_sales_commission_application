@@ -1,15 +1,20 @@
-<h2> Edit Your Product: </h2>
+<%= link_to 'Main_Menu', root_path %>  * 
+<%= link_to 'Account Information', @employee %> *
+<%= link_to 'Product', products_path %> *
+<%= link_to "Create Product", new_product_path %> *
 
-<%= form_for (@product) do |f| %>
-  <strong> <%= f.label :name %> </strong>
-    <%= f.text_field :name %>
-      <%= f.fields_for :product, Product.create do|product_fields| %> <br><br>
+<%= link_to 'Sales', sales_path %> * 
+<%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br>
 
-      <strong> <%= f.label :description %> </strong>
-    <%= f.text_area :description %> <br> <br>
+
+<h2> Product information </h2> <br>
+
+  <strong> Product Name: </strong> <%= @product.name %> <br> <br>
+  <strong> Product Description: </strong> <%= @product.description %>
+  <br> <br>
+
   
-  <strong> <%= f.submit "Submit" %> <strong>
- <% end %>
-<% end %>
+ 
+  
 <br>
 <br>
