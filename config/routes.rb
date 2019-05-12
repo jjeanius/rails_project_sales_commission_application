@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
   root 'welcome#home'
-devise_for :employees, :controllers => {registrations: 'registrations'}
+  devise_for :employees, :controllers => {registrations: 'registrations'}
 
   resources :employees
   resources :products
   resources :sales
+
+  delete '/products/:id/delete', to: 'products#destroy'
 
 
 

@@ -1,20 +1,19 @@
 <%= link_to 'Main_Menu', root_path %>  * 
-<%= link_to 'Account Information', @employee %> *
+<%= link_to 'Account Information', employee_path %> *
 <%= link_to 'Product', products_path %> *
 <%= link_to "Create Product", new_product_path %> *
-
 <%= link_to 'Sales', sales_path %> * 
 <%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br>
 
 
 <h2> Product information </h2> <br>
 
-  <strong> Product Name: </strong> <%= @product.name %> <br> <br>
+<strong> Product Name: </strong> <%= @product.name %> <br> <br>
   <strong> Product Description: </strong> <%= @product.description %>
   <br> <br>
-
+ <%= button_to "delete", product_path(@product), :method => :delete %>
+  <!--<%= button_to "delete", @employee, :method => :delete %> -->
   
  
-  
 <br>
 <br>

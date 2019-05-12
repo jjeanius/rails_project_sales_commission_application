@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
-  has_many :employees
-  has_many :employees, through: :commission
+  has_many :sales
+  has_many :employees, through: :sales
+  
+
+  
 end

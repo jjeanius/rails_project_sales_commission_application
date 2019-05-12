@@ -1,3 +1,13 @@
+<%= link_to 'Main_Menu', root_path %>  * 
+<%= link_to 'Account Information', employee_path %> *
+<%= link_to 'Product', products_path %> *
+<%= link_to "Create Product", new_product_path %> *
+<%= link_to "Edit Product", @product, method: :put %> *
+<%= link_to "Delete Product", @product, method: :delete %> *
+<%= link_to 'Sales', sales_path %> * 
+<%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br> 
+
+
 <h2> Edit Your Product: </h2>
 
 <%= form_for (@product) do |f| %>
