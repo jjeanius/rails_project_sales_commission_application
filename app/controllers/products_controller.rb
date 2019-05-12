@@ -23,19 +23,19 @@ class ProductsController < ApplicationController
     @product = Product.find_by(id: params[:id])
   end 
     
-
   def edit
-    @product = Product.find_by(id: params[:Id])
+    @product =  Product.find_by(id: params[:id])
   end
 
   def update
     @product = Product.find_by(id: params[:id])
-      if @product && @product.update
-        redirect_to product_path(@product)
-      else
-        render :edit
-      end
+    if @product.update(product_params)
+      redirect_to @product
+    else
+      render :edit
     end
+  end
+  
 
   def destroy
     Product.find(params[:id]).destroy

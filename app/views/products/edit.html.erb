@@ -2,7 +2,6 @@
 <%= link_to 'Account Information', current_employee %> *
 <%= link_to 'Product', products_path %> *
 <%= link_to "Create Product", new_product_path %> *
-<%= link_to "Edit Product", @product, method: :get %> *
 <%= link_to "Delete Product", @product, method: :delete %> *
 <%= link_to 'Sales', sales_path %> * 
 <%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br> 
@@ -10,7 +9,7 @@
 
 <h2> Edit Your Product: </h2>
 
-<%= form_for (@product) do |f| %>
+<%= form_for @product, :method => :put do |f| %>
   <strong> <%= f.label :name %> </strong>
     <%= f.text_field :name %>
       <%= f.fields_for :product, Product.create do|product_fields| %> <br><br>

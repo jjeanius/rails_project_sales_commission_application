@@ -2,6 +2,7 @@
 <%= link_to 'Account Information', current_employee %> *
 <%= link_to 'Product', products_path %> *
 <%= link_to "Create Product", new_product_path %> *
+<%= link_to "Edit Product", edit_product_path(@product) %>  *
 <%= link_to 'Sales', sales_path %> * 
 <%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br>
 
@@ -12,6 +13,7 @@
   <strong> Product Description: </strong> <%= @product.description %>
   <br> <br>
  
-  <%= button_to "delete", @product, :method => :delete %> 
+  <%= button_to "Delete", @product, :method => :delete %> <br> <br>
+ 
   
  
