@@ -21,7 +21,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find_by(id: params[:id])
-  
   end 
     
 
@@ -38,11 +37,11 @@ class ProductsController < ApplicationController
       end
     end
 
-    def destroy
-     @product = Product.find_by(id: params[:id])
-      @product.destroy
-      render :index
-    end
+  def destroy
+    Product.find(params[:id]).destroy
+      redirect_to products_path
+     
+  end
 
   private
 
@@ -50,5 +49,5 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :description)
    end
 
-   # <ActionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"H7JElQJCEdV7WSd96478IATggva0e1jbAtwFjPuvVkVRdX+nyPnaaSrCFPVsH9sKuYBU6ZMmd/6srSwj5EOitg==", "product"=><ActionController::Parameters {"name"=>"529 Educational Plan", "description"=>"Children Educational Saving Plan"} permitted: false>, "commit"=>"Submit", "controller"=>"products", "action"=>"create"} permitted: false>
+   
 end

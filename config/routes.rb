@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :products
   resources :sales
 
-  delete '/products/:id/delete', to: 'products#destroy'
+  delete 'products/:id', to: 'products#destroy'
 
 
 
