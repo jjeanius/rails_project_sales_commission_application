@@ -1,22 +1,21 @@
 <H2> Sales List </h2>
 
-<% @saless.each do |salez| %>
-<% if salez.employee = @current_employee %>
-<strong> Employee: </strong> <%= link_to salez.employee.name, employee_path(@current_employee) %><br>
-<strong> Product Name: </strong> <%= link_to salez.product_name, sales_url(salez) %> <br>
-<strong> Sales Amount: </strong> $ <%= salez.sales_amount %> <br>
-<strong> Sales Commission Rate: </strong> <%= salez.commission_rate %> % <br>
-<strong> Sales Commission Amount: </strong> $ <%= salez.commission_amount %> <br><br>
+<% @sales.each do |sale| %>
+<% if sale.employee = @current_employee %>
+<strong> Employee: </strong> <%= link_to sale.employee.name, employee_path(@current_employee) %><br>
+<strong> Product Name: </strong> <%= link_to sale.product_name, sales_path(sale) %> <br>
+<strong> Sales Amount: </strong> $ <%= sale.sales_amount %> <br>
+<strong> Sales Commission Rate: </strong> <%= sale.commission_rate %> % <br>
+<strong> Sales Commission Amount: </strong> $ <%= sale.commission_amount %> <br><br>
 <% else %>
-<strong> Employee: </strong> <%= salez.employee.name %>
-<strong> Product Name: </strong> <%= salez.product_name %> <br>
-<strong> Sales Amount: </strong> $ <%= salez.sales_amount %> <br>
-<strong> Sales Commission Rate: </strong> <%= salez.commission_rate %> % <br>
-<strong> Sales Commission Amount: </strong> $ <%= salez.commission_amount %> <br><br>
+<strong> Employee: </strong> <%= sale.employee.name %>
+<strong> Product Name: </strong> <%= sale.product_name %> <br>
+<strong> Sales Amount: </strong> $ <%= sale.sales_amount %> <br>
+<strong> Sales Commission Rate: </strong> <%= sale.commission_rate %> % <br>
+<strong> Sales Commission Amount: </strong> $ <%= sale.commission_amount %> <br><br>
 <br>
 <% end %>
 <% end %>
 <br>
 <br>
-
 

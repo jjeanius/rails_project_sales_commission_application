@@ -37,11 +37,12 @@ ActiveRecord::Schema.define(version: 2019_05_08_024226) do
 
   create_table "sales", force: :cascade do |t|
     t.string "region"
-    t.integer "employee_id"
-    t.integer "product_id"
+    t.integer "sales_rate"
     t.integer "quantity"
     t.integer "commission_rate"
     t.integer "commission_amount"
+    t.integer "employee_id"
+    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
