@@ -1,7 +1,7 @@
 class CreateSales < ActiveRecord::Migration[5.2]
   def change
     create_table :sales do |t|
-      t.string :region
+      t.string :product_name
       t.integer :sales_rate
       t.integer :quantity
       t.integer :commission_rate

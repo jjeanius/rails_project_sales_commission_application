@@ -3,9 +3,9 @@ require 'pry'
 class SalesController < ApplicationController
   
   def index
-    @sale = Sale.new(sale_params)
+    @sale = Sale.new
     @sales = Sale.all
-    binding.pry
+    #binding.pry
   end
 
   def new

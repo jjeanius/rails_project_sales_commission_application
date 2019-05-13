@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_05_08_024226) do
   end
 
   create_table "sales", force: :cascade do |t|
-    t.string "region"
+    t.string "product_name"
     t.integer "sales_rate"
     t.integer "quantity"
     t.integer "commission_rate"
