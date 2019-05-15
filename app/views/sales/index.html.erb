@@ -5,26 +5,20 @@
 <%= link_to "Create Product", new_product_path %> *
 
 <%= link_to 'Sales', sales_path %> * 
-<%= link_to 'New Sales', new_sale_path %>
+<%= link_to 'New Sales', new_sale_path %> *
 <%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br> 
 
 <H2> Sales List </h2>
 
 <% @sales.each do |sale| %>
-<% if sale.employee_id = @current_employee.id %>
-<strong> Employee: </strong> <%= link_to sale.employee_id, #{sales.employee.name}, employee_path(@current_employee) %><br>
-<strong> Product Name: </strong> <%= link_to sale.product_id %> <br>
-<strong> Sales Amount: </strong> $ <%= sale.sales_amount %> <br>
-<strong> Sales Commission Rate: </strong> <%= sale.commission_rate %> % <br>
-<strong> Sales Commission Amount: </strong> $ <%= sale.commission_amount %> <br><br>
-<% else %>
+
 <strong> Employee: </strong> <%= sale.employee.name %>
 <strong> Product Name: </strong> <%= sale.product_name %> <br>
 <strong> Sales Amount: </strong> $ <%= sale.sales_amount %> <br>
 <strong> Sales Commission Rate: </strong> <%= sale.commission_rate %> % <br>
 <strong> Sales Commission Amount: </strong> $ <%= sale.commission_amount %> <br><br>
 <br>
-<% end %>
+
 <% end %>
 <br>
 <br>

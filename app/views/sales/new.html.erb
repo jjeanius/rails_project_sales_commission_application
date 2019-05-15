@@ -5,32 +5,23 @@
 <%= link_to "Create Product", new_product_path %> *
 
 <%= link_to 'Sales', sales_path %> * 
-<%= link_to 'New Sales', new_sale_path %>
+<%= link_to 'New Sales', new_sale_path %> *
 <%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br> 
 
 
 <h2> New Sales </h2><br>
 
-<%= render 'form' %>
-
-<%= form_with model: @sales, url: sales_path(@sales) do |f| %>
+<%= form_with scope: :sale,  sales_path(@sale), method: :patch, do |f| %>
 
 <div class="action">
-<% if employee = @current_employee %> 
 <%= f.label :employee_name %> : 
-<%= employee.name %>
-<br> <br> 
+<%= collection_select(:employee_name, :employee_id, Employee.all, :id, :name) %>
+<br> <br>
 </div>
 
 <div class="action">
-<%= f.label :employee_id %> :
-<%= f.number_field :employee_id %><br> <br>
-</div>
-
-
-<div class="action">
-<%= f.label :product_name %>
-<%= f.collection_select :product_name, Product.all, :name, :name %> <br><br>
+<%= f.label :product_name %> :
+<%= collection_select(:product_name, :product_id, Product.all, :id, :name) %> <br><br>
 </div>
 
 <div class="action">
@@ -39,17 +30,17 @@
 </div>
 
 <div class="action">
-<%= f.label :quantity %>
+<%= f.label :quantity %> :
 <%= f.number_field :quantity %><br><br>
 </div>
 
 <div class="action">
-<%= f.label :sales_rate %> $/share
+<%= f.label :sales_rate %> price per share:
 <%= f.number_field :sales_rate %><br><br>
 </div>
 
 <div class="action">
-<%= f.label :sales_amount %> $
+<%= f.label :sales_amount %> $:
 <%= f.number_field :sales_amount %><br><br>
 </div>
 
@@ -59,13 +50,12 @@
 </div>
 
 <div class="action">
-<%= f.label :commission_amount %> $
+<%= f.label :commission_amount %> $:
 <%= f.number_field :commission_amount %><br><br>
 </div>
 
 
 <%= f.submit "Submit" %>
 
+<% end %>
 
-<% end %>
-<% end %>
