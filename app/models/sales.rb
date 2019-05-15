@@ -3,6 +3,7 @@ class Sales < ApplicationRecord
   belongs_to :product
   accepts_nested_attributes_for :employee, allow_destroy: true
   accepts_nested_attributes_for :product, allow_destroy: true
+  
 
   def calculate_commission
     if commission_amount.present? && commission_rate.present?

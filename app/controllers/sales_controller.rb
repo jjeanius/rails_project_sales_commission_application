@@ -3,39 +3,52 @@ require 'pry'
 class SalesController < ApplicationController
   
   def index
-        @sales = Sales.all
+        @salez = Sales.all
   end
   
   def new
-    @sale = Sales.new
+    @sales = Sales.new
+    render :new
   end
 
   def create
-    @sale = Sales.new(sale_params)   
-    binding.pry
-      if @sale && @sale.save
+    @sales = Sales.new(sales_params) 
+      @sales.save
         render :show
-      else
-        redirect_to new_sale_path
-      end
+     # else
+     #  redirect_to new_sale_path
+    #  end
   end
 
   def show
-    @sale = Sales.find_by(id: params[:id])
-    
+    @sales = Sales.find_by(id: params[:id])
+   
   end
 
+  def edit
+    @sales = Sales.find_by(id: params[:id])
+  end
+
+  def update
+    @sales = Sales.find_by(id: params[:id])
+    if @sales && @sales.update(sales_params)
+      format.html { redirect_to @sales, notice: 'Sales was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+      
+
   def destroy
-    @sale = Sales.find_by(id: params[:id])
-    @sale.destroy
-    redirect_to sales_path
+   session[:employee_id] = nil
+     redirect_to root_path
   end
 
   
 
   private
   
-  def sale_params
-    params.require(:sale).permit(:employee_id, :product_id, :product_name, :quantity, :sales_rate, :sales_amount, :commission_rate, :commission_amount )
+  def sales_params
+    params.require(:sales).permit(:employee_id, :product_id, :product_name, :quantity, :sales_rate, :commission_rate, :commission_amount)
   end
 end

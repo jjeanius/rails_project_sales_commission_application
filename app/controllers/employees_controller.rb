@@ -40,8 +40,8 @@ class EmployeesController < ApplicationController
   end 
     
     def destroy
-      @employee = Employee.find_by(id: params[:id]).destroy
-      render :index
+      session[employee_id] = nil
+      redirect_to root_path
     end
 
 

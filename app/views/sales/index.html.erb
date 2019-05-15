@@ -10,13 +10,13 @@
 
 <H2> Sales List </h2>
 
-<% @sales.each do |sale| %>
+<% @salez.each do |sales| %>
 
-<strong> Employee: </strong> <%= sale.employee.name %>
-<strong> Product Name: </strong> <%= sale.product_name %> <br>
-<strong> Sales Amount: </strong> $ <%= sale.sales_amount %> <br>
-<strong> Sales Commission Rate: </strong> <%= sale.commission_rate %> % <br>
-<strong> Sales Commission Amount: </strong> $ <%= sale.commission_amount %> <br><br>
+<strong> Employee: </strong> <%= sales.employee.name %>
+<strong> Product Name: </strong> <%= sales.product_name %> <br>
+<strong> Sales Amount: </strong> $ <%= sales.sales_amount %> <br>
+<strong> Sales Commission Rate: </strong> <%= sales.commission_rate %> % <br>
+<strong> Sales Commission Amount: </strong> $ <%= sales.commission_amount %> <br><br>
 <br>
 
 <% end %>

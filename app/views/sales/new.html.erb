@@ -11,17 +11,19 @@
 
 <h2> New Sales </h2><br>
 
-<%= form_with scope: :sale,  sales_path(@sale), method: :patch, do |f| %>
+<%= form_for @sales, url: @sales, method: :post do |f| %>
 
 <div class="action">
-<%= f.label :employee_name %> : 
-<%= collection_select(:employee_name, :employee_id, Employee.all, :id, :name) %>
+<%= f.label :employee_id %> : 
+<%= collection_select(:employee_id, :employee_id, Employee.all, :id, :id) %>
+
 <br> <br>
 </div>
 
+
 <div class="action">
 <%= f.label :product_name %> :
-<%= collection_select(:product_name, :product_id, Product.all, :id, :name) %> <br><br>
+<%= collection_select(:product_name, :product_name, Product.all, :name, :name) %> <br><br>
 </div>
 
 <div class="action">
@@ -37,11 +39,6 @@
 <div class="action">
 <%= f.label :sales_rate %> price per share:
 <%= f.number_field :sales_rate %><br><br>
-</div>
-
-<div class="action">
-<%= f.label :sales_amount %> $:
-<%= f.number_field :sales_amount %><br><br>
 </div>
 
 <div class="action">

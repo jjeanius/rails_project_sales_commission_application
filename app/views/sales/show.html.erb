@@ -13,18 +13,16 @@
 
 =====================================================================================================
 <br>
+
 <table>
 <tr>
-<td> <strong> Product ID: </strong> <%= @sales.product_id %> </td> 
-<td> <strong> Product Name: </strong> <%= @sales.product_name %></td>
-<td> <strong> Sales Quantity: </strong> <%= @sales.quantity %> </td> 
-<td> <strong> Sales Amount: </strong> <%= @sales.sales_amount %> </td>
-<td> <strong> Commission Rate: </strong> <%= @sales.commission_rate %> </td> 
-<td> <strong> Commission Amount: </strong> <%= @sales.commission_amount %> </td> 
+<th> <strong> Product ID: </strong> </th> <td> <%= @sales.product_id %> </td> 
+<th> <strong> Product Name: </strong> </th> <td> <%= @sales.product_name %></td>
+<th> <strong> Sales Quantity: </strong> </th> <td> <%= @sales.quantity %> </td> 
+<th> <strong> Commission Rate: </strong> </th> <td><%= @sales.commission_rate %> </td> 
+<th> <strong> Commission Amount: </strong> </th> <td> <%= @sales.commission_amount %> </td> 
 <tr>
 </table>
 <br> <br>
 
-<%= link_to "Edit sales", edit_sale_path %>  <br> <br> 
- <%= link_to "Delete Product", @sales, method: :delete %>
- <br> <br>
+ 
