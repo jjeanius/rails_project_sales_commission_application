@@ -22,7 +22,6 @@ class SalesController < ApplicationController
 
   def show
     @sales = Sales.find_by(id: params[:id])
-   
   end
 
   def edit
@@ -37,11 +36,11 @@ class SalesController < ApplicationController
         format.html { render :edit }
       end
     end
-      
-
+    
   def destroy
-   session[:employee_id] = nil
-     redirect_to root_path
+    @sales = Sales.find_by(id: params[:id])
+    @sales.destroy
+     redirect_to sales_path
   end
 
   

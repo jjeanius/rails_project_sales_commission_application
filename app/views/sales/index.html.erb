@@ -9,21 +9,21 @@
 <%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br> 
 
 <H2> Sales List </h2>
-
+<ol>
 <% @salez.each do |sales| %>
 <% if current_employee = sales.employee %>
-<strong> Employee: </strong> <%= link_to sales.employee.name, employees_path(@employee) %><br>
-<strong> Product Name: </strong> <%= link_to sales.product_name, sale_path(sales) %> <br>
-<strong> Sales Rate: </strong> <%= sales.sales_rate %>
-<strong> Sales Amount: </strong> $<br>
-<strong> Sales Commission Rate: </strong> <%= sales.commission_rate %> % <br>
-<strong> Sales Commission Amount: </strong> $ <%= sales.commission_amount %> <br><br>
+<li> <strong> Employee: </strong> <%= link_to sales.employee.name, employees_path(@employee) %><br> 
+ <strong> Product Name: </strong> <%= link_to sales.product_name, sale_path(sales) %> <br>
+ <strong> Sales Rate: </strong> <%= sales.sales_rate %> <br>
+ <strong> Sales Amount: </strong> $<br> 
+ <strong> Sales Commission Rate: </strong> <%= sales.commission_rate %> % <br>
+ <strong> Sales Commission Amount: </strong> $ <%= sales.commission_amount %> <br><br> 
 <% else %>
-<strong> Employee: </strong> <%= sales.employee %>
-<strong> Product Name: </strong> <%= sales.product_name %> <br>
+ <strong> Employee: </strong> <%= sales.employee %> 
+ <strong> Product Name: </strong> <%= sales.product_name %> <br>
 
-<strong> Sales Commission Rate: </strong> <%= sales.commission_rate %> % <br>
-<strong> Sales Commission Amount: </strong> $ <%= sales.commission_amount %> <br><br>
+ <strong> Sales Commission Rate: </strong> <%= sales.commission_rate %> % <br> 
+ <strong> Sales Commission Amount: </strong> $ <%= sales.commission_amount %> <br><br> 
 <br>
 <% end %>
 <% end %>
