@@ -11,15 +11,23 @@
 <H2> Sales List </h2>
 
 <% @salez.each do |sales| %>
-
-<strong> Employee: </strong> <%= sales.employee.name %>
-<strong> Product Name: </strong> <%= sales.product_name %> <br>
+<% if current_employee %>
+<strong> Employee: </strong> <%= link_to sales.employee_name, employee_path(@current_employee) %><br>
+<strong> Product Name: </strong> <%= link_to sales.product_name, sales_url(sales) %> <br>
 <strong> Sales Amount: </strong> $ <%= sales.sales_amount %> <br>
+<strong> Sales Commission Rate: </strong> <%= sales.commission_rate %> % <br>
+<strong> Sales Commission Amount: </strong> $ <%= sals.commission_amount %> <br><br>
+<% else %>
+<strong> Employee: </strong> <%= sales.employee %>
+<strong> Product Name: </strong> <%= sales.product_name %> <br>
+
 <strong> Sales Commission Rate: </strong> <%= sales.commission_rate %> % <br>
 <strong> Sales Commission Amount: </strong> $ <%= sales.commission_amount %> <br><br>
 <br>
-
+<% end %>
 <% end %>
 <br>
 <br>
+
+
 

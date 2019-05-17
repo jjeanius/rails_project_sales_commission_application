@@ -13,11 +13,11 @@ class SalesController < ApplicationController
 
   def create
     @sales = Sales.new(sales_params) 
-      @sales.save
-        render :show
-     # else
-     #  redirect_to new_sale_path
-    #  end
+      if @sales && @sales.save
+        redirect_to sales_path
+      else
+        redirect_to new_sale_path
+      end
   end
 
   def show
