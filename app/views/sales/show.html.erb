@@ -13,17 +13,28 @@
 
 =====================================================================================================
 <br>
+  <table>
+    <tr>
+      <th> <strong> Product ID </strong> </th> 
+        <th>  <strong> Product Name </strong> </th> 
+          <th>  <strong> Sales Quantity </strong> </th> 
+            <th>  <strong> Sales Rate </strong> </th> 
+          <th> <strong> Total Sales </strong> </th> 
+        <th> <strong>  Commission Rate </strong> </th> 
+        <th> <strong>  Commission Amount  </strong> </th> 
+      </tr> <br>
 
-<table>
-<tr>
-<th> <strong> Product ID: </strong> </th> <td> <%= @sales.product_id %> </td> 
-<th> <strong> Product Name: </strong> </th> <td> <%= @sales.product_name %></td>
-<th> <strong> Sales Quantity: </strong> </th> <td> <%= @sales.quantity %> </td> 
-<th> <strong> Commission Rate: </strong> </th> <td><%= @sales.commission_rate %> </td> 
-<th> <strong> Commission Amount: </strong> </th> <td> <%= @sales.commission_amount %> </td> 
-<tr>
-</table>
-<br> <br>
+      <td> <%= @sales.product_id %> </td> 
+        <td> <%= @sales.product_name %></td>
+          <td> <%= @sales.quantity %> </td> 
+          <td> <%= @sales.sales_rate %> % </td> 
+        <td> $ <%= @sales.quantity * @sales.sales_rate %> </td> 
+      <td><%= @sales.commission_rate %> % </td> 
+   <td> $ <%= @sales.quantity * @sales.sales_rate * @sales.commission_rate/100 %> </td> 
+    
+  </table>
+  <br> <br>
+  
 <%= button_to "delete", @sales, :method => :delete %>
 
  

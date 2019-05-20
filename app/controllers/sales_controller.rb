@@ -3,7 +3,8 @@ require 'pry'
 class SalesController < ApplicationController
   
   def index
-        @salez = Sales.all
+    @salez = Sales.all
+    @sales = Sales.new
   end
   
   def new
@@ -21,11 +22,15 @@ class SalesController < ApplicationController
   end
 
   def show
+    
     @sales = Sales.find_by(id: params[:id])
+    #@total_sales = quantity * sales_rate
+    # self.calculate_commission
   end
 
   def edit
     @sales = Sales.find_by(id: params[:id])
+    
   end
 
   def update
@@ -50,4 +55,7 @@ class SalesController < ApplicationController
   def sales_params
     params.require(:sales).permit(:employee_id, :product_id, :product_name, :quantity, :sales_rate, :commission_rate, :commission_amount)
   end
+
+    
+
 end

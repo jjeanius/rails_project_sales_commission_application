@@ -5,18 +5,13 @@ class Sales < ApplicationRecord
   accepts_nested_attributes_for :product, allow_destroy: true
   
 
-  def calculate_commission
-    if commission_amount.present? && commission_rate.present?
-      self.total_commission = commission_amount * commission_rate
-    end
-  end
-    
-    
+   
   def calculate_sales
-    if sales_rate.present? && quantity.present?
-      self.sales_amount = sales_rate * quantity
-      end
+    @total_sales = quantity * sales_rate 
   end
 
+  def calculate_commission
+    @total_commission = quantity * sales_rate * commission_rate/100
+  end
 
 end
