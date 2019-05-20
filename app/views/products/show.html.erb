@@ -1,19 +1,13 @@
-<%= link_to 'Main_Menu', root_path %>  * 
-<%= link_to 'Employee Account', current_employee %> *
-<%= link_to 'Product', products_path %> *
-<%= link_to "Create Product", new_product_path %> *
 <%= link_to "Edit Product", edit_product_path(@product) %>  *
-<%= link_to 'Sales', sales_path %> * 
-<%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br>
-
+<%= render 'layouts/links' %>
 
 <h2> Product information </h2> <br>
 
-<strong> Product Name: </strong> <%= @product.name %> <br> <br>
-  <strong> Product Description: </strong> <%= @product.description %>
-  <br> <br>
+  <strong> Product Name: </strong> <%= @product.name %> <br> <br>
+    <strong> Product Description: </strong> <%= @product.description %>
+      <br> <br>
  
-  <%= button_to "Delete", @product, :method => :delete %> <br> <br>
+<%= button_to "Delete", @product, :method => :delete %> <br> <br>
  
   
  

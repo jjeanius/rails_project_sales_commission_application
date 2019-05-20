@@ -1,13 +1,4 @@
-<%= link_to 'Main_Menu', root_path %>  * 
-<%= link_to 'Account Information', current_employee %> *
-
-<%= link_to 'Product', products_path %> *
-<%= link_to "Create Product", new_product_path %> *
-
-<%= link_to 'Sales', sales_path %> * 
-<%= link_to 'New Sales', new_sale_path %> *
-<%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br> 
-
+<%= render 'layouts/links' %> <br> <br>
 
 <h2> Sales Report </h2>
 
@@ -31,10 +22,8 @@
         <td> $ <%= @sales.quantity * @sales.sales_rate %> </td> 
       <td><%= @sales.commission_rate %> % </td> 
    <td> $ <%= @sales.quantity * @sales.sales_rate * @sales.commission_rate/100 %> </td> 
-    
-  </table>
-  <br> <br>
-  
+  </table> <br> <br>
+
 <%= button_to "delete", @sales, :method => :delete %>
 
  

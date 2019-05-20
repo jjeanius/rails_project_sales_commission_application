@@ -1,23 +1,17 @@
-<%= link_to 'Main_Menu', root_path %>  * 
-<%= link_to 'Employee Account', current_employee %> *
-<%= link_to 'Product', products_path %> *
-<%= link_to "Create Product", new_product_path %> *
-<%= link_to "Delete Product", @product, method: :delete %> *
-<%= link_to 'Sales', sales_path %> * 
-<%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br> 
-
+<%= render 'layouts/links' %>
 
 <h2> Edit Your Product: </h2>
 
 <%= form_for @product, :method => :put do |f| %>
+
   <strong> <%= f.label :name %> </strong>
     <%= f.text_field :name %>
       <%= f.fields_for :product, Product.create do|product_fields| %> <br><br>
 
       <strong> <%= f.label :description %> </strong>
-    <%= f.text_area :description %> <br> <br>
+      <%= f.text_area :description %> <br> <br>
   
-  <strong> <%= f.submit "Submit" %> <strong>
- <% end %>
-<% end %>
-<br>
+    <strong> <%= f.submit "Submit" %> <strong>
+  <% end %>
+
+<% end %> <br>

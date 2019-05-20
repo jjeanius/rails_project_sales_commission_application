@@ -1,12 +1,4 @@
-<%= link_to 'Main_Menu', root_path %>  * 
-<%= link_to 'Employee Account', current_employee %> *
-
-<%= link_to 'Product', products_path %> *
-<%= link_to "Create Product", new_product_path %> *
-
-<%= link_to 'Sales', sales_path %> * 
-<%= link_to 'New Sales', new_sale_path %> *
-<%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br> 
+<%= render 'layouts/links' %>
 
 <H2> Sales List </h2>
 <ol>
