@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root 'welcome#home'
   devise_for :employees, :controllers => {registrations: 'registrations'}
 
-  resources :employees
+  resources :employees do
+    resources :sales, only: [:index, :new, :show, :update, :delete]
+  end
+  
   resources :products
   resources :sales
   

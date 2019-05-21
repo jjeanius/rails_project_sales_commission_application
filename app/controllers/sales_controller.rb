@@ -8,7 +8,7 @@ class SalesController < ApplicationController
   end
   
   def new
-    @sales = Sales.new
+    @sales = Sales.new(employee_id: params[:employee_id])
     render :new
   end
 
@@ -22,28 +22,24 @@ class SalesController < ApplicationController
   end
 
   def show
-    
-    @sales = Sales.find_by(id: params[:id])
-    #@total_sales = quantity * sales_rate
-    # self.calculate_commission
+    set_sales
   end
 
   def edit
-    @sales = Sales.find_by(id: params[:id])
-    
+    set_sales
   end
 
   def update
-    @sales = Sales.find_by(id: params[:id])
+    set_sales
     if @sales && @sales.update(sales_params)
       format.html { redirect_to @sales, notice: 'Sales was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
+    else
+      format.html { render :edit }
     end
+  end
     
   def destroy
-    @sales = Sales.find_by(id: params[:id])
+    set_sales
     @sales.destroy
      redirect_to sales_path
   end
@@ -51,11 +47,14 @@ class SalesController < ApplicationController
   
 
   private
+
+  def set_sales
+    @sales = Sales.find_by(id: params[:id])
+  end
+
   
   def sales_params
     params.require(:sales).permit(:employee_id, :product_id, :product_name, :quantity, :sales_rate, :commission_rate, :commission_amount)
   end
-
-    
 
 end

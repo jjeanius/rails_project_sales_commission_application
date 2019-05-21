@@ -23,15 +23,15 @@ class EmployeesController < ApplicationController
 
    
   def show
-    @employee = Employee.find_by(id: params[:id])
+    set_employee
   end
 
     def edit
-      @employee = Employee.find_by(id: params[:id])
+      set_employee
     end
 
     def update
-      @employee = Employee.find_by(id: params[:id])
+      set_employee
         if @employee && @employee.update(employee_params)
           redirect_to @employee
         else
@@ -46,6 +46,12 @@ class EmployeesController < ApplicationController
 
 
 private
+
+  def set_employee
+    @employee = Employee.find_by(id: params[:id])
+  end
+
+
 
   def employee_params
     params.require(:employee).permit(:employee, :name, :region, :position, :email, :password, :password_confirmation, :admin)

@@ -20,15 +20,15 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find_by(id: params[:id])
+    set_product
   end 
     
   def edit
-    @product =  Product.find_by(id: params[:id])
+    set_product
   end
 
   def update
-    @product = Product.find_by(id: params[:id])
+    set_product
     if @product.update(product_params)
       redirect_to @product
     else
@@ -44,6 +44,10 @@ class ProductsController < ApplicationController
   end
 
   private
+
+  def set_product
+    @product =  Product.find_by(id: params[:id])
+  end
 
   def product_params
     params.require(:product).permit(:name, :description)
