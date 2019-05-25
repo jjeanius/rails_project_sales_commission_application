@@ -1,10 +1,5 @@
-<%= render 'layouts/links' %>
-
-<H2> Sales List </h2>
-
-
 <% @salez.each do |sales| %>
-  <% if sales.employee == current_employee %>
+  <% if sales.employee %>
     <li> <strong> Employee: </strong> <%= link_to sales.employee.name, employees_path(@employee) %><br> 
       <strong> Product Name: </strong> <%= link_to sales.product_name, sale_path(sales) %> <br>
         <strong> Quantity: </strong> <%= sales.quantity %> Per Share <br>
@@ -24,6 +19,3 @@
   <% end %>
 <% end %>
   <br> <br>
-
-
-

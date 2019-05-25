@@ -3,10 +3,16 @@ require 'pry'
 class SalesController < ApplicationController
   
   def index
-    @salez = Sales.all
-    @sales = Sales.new
+     @salez = Sales.all
+     @sales = Sales.new
+
+    if params[:employee_id]
+       @sales = Employee.find(params[:employee_id]).sales
+    else
+      @salez = Sales.all
+    end
   end
-  
+
   def new
     @sales = Sales.new(employee_id: params[:employee_id])
     render :new

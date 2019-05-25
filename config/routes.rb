@@ -4,18 +4,16 @@ Rails.application.routes.draw do
   devise_for :employees, :controllers => {registrations: 'registrations'}
 
   resources :employees do
-    resources :sales, only: [:index, :new, :show, :update, :delete]
+    resources :sales, only: [:index, :new, :show]
   end
   
   resources :products
   resources :sales
   
   delete 'products/:id', to: 'products#destroy'
+
+
   
-
-
-
-
 
 
 
