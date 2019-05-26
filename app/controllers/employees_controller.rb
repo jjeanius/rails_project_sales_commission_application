@@ -16,6 +16,7 @@ class EmployeesController < ApplicationController
     @employee = Employee.new(employee_params)  
       if @employee.save
         session[:employee_id] = @employee.id
+        
         redirect_to employee_path(@employee)
       else
         render :new
@@ -24,7 +25,8 @@ class EmployeesController < ApplicationController
    
   def show
     set_employee
-    @salez = Sales.find_by(id: params[:sales_id])
+    @sales = Sales.find_by(id: params[:sales_id])
+    
   end
 
   def edit
@@ -41,8 +43,9 @@ class EmployeesController < ApplicationController
 end 
     
   def destroy
-    session[employee_id] = nil
-    redirect_to root_path
+          set_employee.delete
+      #session[employee_id].delete
+      redirect_to root_path
   end
 
 

@@ -38,8 +38,10 @@ class SalesController < ApplicationController
   def update
     set_sales
     if @sales && @sales.update(sales_params)
-      format.html { redirect_to @sales, notice: 'Sales was successfully updated.' }
+     # format.html { redirect_to @sales, notice: 'Sales was successfully updated.' }
+      redirect_to @sales
     else
+      render :update
       format.html { render :edit }
     end
   end

@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 
 
 
-  private
+  
 
   
 
