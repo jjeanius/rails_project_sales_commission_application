@@ -52,10 +52,6 @@ private
     @employee = Employee.find_by(id: params[:id])
   end
 
-  def current_employee
-    @current_employee ||= Employee.find(session[:employee_id]) if session[:employee_id]
-  end
-
   def employee_params
     params.require(:employee).permit(:employee, :name, :region, :position, :email, :password, :password_confirmation, :admin)
   end
