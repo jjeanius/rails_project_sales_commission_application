@@ -3,7 +3,8 @@ class Sales < ApplicationRecord
   belongs_to :product
   accepts_nested_attributes_for :employee, allow_destroy: true
   accepts_nested_attributes_for :product, allow_destroy: true
-
+  validates :prduct_name, :sales_rate, :quantity, :commission_rate, presence: true
+ 
   def employee_name
     self.try(:employee).try(:name)
   end

@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
       redirect_to product_path(@product)
     else
       render :new
+      
     end
   end
 
