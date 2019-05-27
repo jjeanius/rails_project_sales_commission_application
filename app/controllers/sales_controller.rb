@@ -20,12 +20,13 @@ class SalesController < ApplicationController
 
   def create
     @sales = Sales.new(sales_params) 
-      if @sales && @sales.save
-        redirect_to sales_path
-      else
-        redirect_to new_sale_path
-      end
-  end
+    binding.pry
+    if @sales && @sales.save
+       redirect_to sales_path(@sales)
+    else
+      redirect_to new_sale_path
+    end
+ end
 
   def show
     set_sales

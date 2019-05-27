@@ -3,8 +3,12 @@
 <h2> Product List </h2>
 <ol>
 <% @products.each do|product| %> 
-  <li> Product Name: <%= link_to product.name, product_path(product) %> <br></li>
-        product Description: <%= product.description %> <br> <br></li>
+  <li> Product Number: <%= product.id %> <br> 
+    Product Name: <%= link_to product.name, product_path(product) %> <br>
+      Product Description: <%= product.description %> <br> <br></li>
+  
+<!-- <%= button_to "Delete", @product, :method => :delete %><br> -->  
+
 <% end %>
 </ol>
 <br>

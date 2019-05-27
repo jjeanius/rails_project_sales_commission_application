@@ -1,6 +1,7 @@
-<%= form_with model: @sales, url: sales_path do |f| %>
 
-  <div class="action">
+<%= form_with model: @sales, url: sale_path do |f| %>
+
+<div class="action">
     <%= f.label :employee_id %> : 
       <%= f.collection_select(:employee_id, Employee.all, :id, :id) %>  
     <br> <br>
@@ -8,7 +9,7 @@
 
   <div class="action">
     <%= f.label :employee_name %> : 
-      <%= f.collection_select(:employee_name, Employee.all, :id, :name)  %>
+      <%= f.collection_select(:employee_name, Employee.all, :id, :name) %>
     <br> <br>
   </div>
 
@@ -38,7 +39,6 @@
   </div>
 
     <%= f.submit "Submit" %>
+ 
 
 <% end %>
-
-

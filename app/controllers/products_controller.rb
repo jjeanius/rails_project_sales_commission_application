@@ -26,7 +26,6 @@ class ProductsController < ApplicationController
     
   def edit
     set_product
-    @product_name.unique
     
   end
 
