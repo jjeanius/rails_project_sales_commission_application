@@ -1,5 +1,4 @@
-
-<%= form_with model: @sales, url: sale_path do |f| %>
+<%= form_with model: @sales, url: sales_path do |f| %>
 
 <div class="action">
     <%= f.label :employee_id %> : 
@@ -39,6 +38,7 @@
   </div>
 
     <%= f.submit "Submit" %>
+    
  
 
 <% end %>

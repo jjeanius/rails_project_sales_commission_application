@@ -15,12 +15,11 @@ class SalesController < ApplicationController
 
   def new
     @sales = Sales.new(employee_id: params[:employee_id])
-    render :new
   end
-
+    
   def create
     @sales = Sales.new(sales_params) 
-    binding.pry
+   # binding.pry
     if @sales && @sales.save
        redirect_to sales_path(@sales)
     else
@@ -53,7 +52,6 @@ class SalesController < ApplicationController
      redirect_to sales_path
   end
 
-  
 
   private
 

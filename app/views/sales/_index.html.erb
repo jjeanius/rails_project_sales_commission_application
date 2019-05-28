@@ -1,5 +1,6 @@
-<H2> Sales List </h2>
 
+<H2> Sales List </h2></label>
+ 
 <% @salez.each do |sales| %>
   <% if current_employee == sales.employee %>
     <li> <strong> Employee: </strong> <%= link_to sales.employee.name, employees_path(@employee) %><br> 
@@ -8,17 +9,18 @@
           <strong> Sales Rate: </strong> $  <%= sales.sales_rate %> <br>
         <strong> Sales Amount: </strong> $ <%= sales.quantity * sales.sales_rate %> <br>  
       <strong> Sales Commission Rate: </strong> <%= sales.commission_rate %> % <br>
-    <strong> Sales Commission Amount: </strong> $ <%= sales.quantity * sales.sales_rate * sales.commission_rate/100 %> <br> <br>
+    <strong> Sales Commission Amount: </strong> $ <%= sales.quantity * sales.sales_rate * sales.commission_rate/100 %> </li> <br>
+  <%= button_to "Delete", sales, :method => :delete %><br> <br>
+ 
   <% else %>  
-    <strong> Employee: </strong> <%= sales.employee_name %> <br>
+   <li> <strong> Employee: </strong> <%= sales.employee_name %> <br>
       <strong> Product Name: </strong> <%= sales.product_name %> <br>
         <strong> Quantity: </strong> <%= sales.quantity %> Per Share <br>
       <strong> Sales Rate: </strong> $  <%= sales.sales_rate %> <br>
     <strong> Sales Amount: </strong> $ <%= sales.quantity * sales.sales_rate %> <br> 
     <strong> Sales Commission Rate: </strong> <%= sales.commission_rate %> % <br> 
- <strong> Sales Commission Amount: </strong> $ <%= sales.quantity * sales.sales_rate * sales.commission_rate/100 %> <br><br> 
+ <strong> Sales Commission Amount: </strong> $ <%= sales.quantity * sales.sales_rate * sales.commission_rate/100 %> </li> <br><br> 
   <br>
-<%= button_to "Delete", sales, :method => :delete %><br>
 
   <% end %>
 <% end %>

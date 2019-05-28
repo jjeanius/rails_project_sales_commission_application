@@ -5,7 +5,6 @@ class EmployeesController < ApplicationController
   
   def index
     @employees = Employee.all
-    
   end
     
   def new
@@ -25,8 +24,8 @@ class EmployeesController < ApplicationController
    
   def show
     set_employee
-    @sales = Sales.find_by(id: params[:sales_id])
-    
+      @salez = Sales.all
+      # @sales = Sales.find_by(id: params[:sales_id])
   end
 
   def edit
@@ -39,8 +38,8 @@ class EmployeesController < ApplicationController
         redirect_to @employee
       else
         render :edit_employees_path
-  end
-end 
+    end
+  end 
     
   def destroy
           set_employee.delete

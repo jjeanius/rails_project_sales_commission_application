@@ -2,7 +2,8 @@
 <%= link_to 'Edit Account', edit_employee_path %>  *
 <%= render 'layouts/links' %> 
 
-<h2> Account Information </h2> <br> 
+<h2> Score Board </h2> <br> 
+
 
 <strong> Region: </strong> <%= @employee.region %> <br> <br>
 <strong> Employee Number: </strong> <%= @employee.id %> <br> <br>
@@ -10,6 +11,10 @@
 <strong> Job Title: </strong> <%= @employee.position %> <br><br> 
 
 <br>
-================================================================================================
+<!-- <% if @employee == current_employee %>
+    <%= button_to "Delete", @employee, :method => :delete %><br>
+  <% end %> --  Only for Admin function -->  
 
+================================================================================================
+ <%= render 'sales/index'%>
 

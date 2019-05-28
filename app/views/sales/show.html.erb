@@ -1,4 +1,3 @@
-<%= link_to 'Edit Sales', edit_sale_path %> *
 <%= render 'layouts/links' %> <br> <br>
 
 <h2> Sales Report </h2>
@@ -16,7 +15,8 @@
         <th> <strong>  Commission Amount  </strong> </th> 
       </tr> <br>
 
-      <td> <%= @sales.product_id %> </td> 
+    
+<td> <%= @sales.product_id %> </td> 
         <td> <%= @sales.product_name %></td>
           <td> <%= @sales.quantity %> </td> 
           <td> <%= @sales.sales_rate %> % </td> 
@@ -26,5 +26,3 @@
   </table> <br> <br>
 
 <%= button_to "delete", @sales, :method => :delete %>
-
- 
