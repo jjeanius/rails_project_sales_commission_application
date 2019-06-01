@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :employees do
     resources :sales, only: [:index, :new, :show]
+      
   end
   
   resources :products

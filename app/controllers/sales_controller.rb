@@ -15,12 +15,13 @@ class SalesController < ApplicationController
 
   def new
     @sales = Sales.new(employee_id: params[:employee_id])
-  end
+   
+    end 
+ 
     
   def create
     @sales = Sales.new(sales_params) 
-   # binding.pry
-    if @sales && @sales.save
+     if @sales && @sales.save
        redirect_to sales_path(@sales)
     else
       redirect_to new_sale_path
@@ -29,7 +30,8 @@ class SalesController < ApplicationController
 
   def show
     set_sales
-  end
+  
+    end
 
   def edit
     set_sales
@@ -37,12 +39,11 @@ class SalesController < ApplicationController
 
   def update
     set_sales
-    if @sales && @sales.update(sales_params)
-     # format.html { redirect_to @sales, notice: 'Sales was successfully updated.' }
+     if @sales && @sales.update(sales_params)
+     #format.html { redirect_to @sales, notice: 'Sales was successfully updated.' }
       redirect_to @sales
     else
-      render :update
-      format.html { render :edit }
+      render :edit
     end
   end
     
@@ -64,4 +65,5 @@ class SalesController < ApplicationController
     params.require(:sales).permit(:employee_id, :product_id, :product_name, :quantity, :sales_rate, :commission_rate, :commission_amount)
   end
 
+  
 end

@@ -6,14 +6,13 @@
   <% @employees.each do |employee| %> 
 
   <% if employee == current_employee %>
-
   <li> Name:  <%= link_to employee.name, employee_path(employee) %>  <br> 
         Region:  <%= employee.region %>  <br> 
           Job Tilte:  <%= employee.position %> </li> <br> 
   <% else %>
-  <li>     Name:  <%= employee.name %>  <br> 
-        Region:  <%= employee.region %>  <br> 
-         Job Tilte:  <%= employee.position %> </li>
+  <li>  Name:  <%= employee.name %>  <br> 
+          Region:  <%= employee.region %>  <br> 
+            Job Tilte:  <%= employee.position %> </li>
  
   <% end %> <br> <br>
 <% end %>

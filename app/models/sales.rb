@@ -12,14 +12,7 @@ class Sales < ApplicationRecord
   def employee_name=(name)
     employee = Employee.find_or_create_by(name: name)
     self.employee = employee
-  end  
+  end    
    
-  def calculate_sales
-    @total_sales = quantity * sales_rate 
-  end
-
-  def calculate_commission
-    @total_commission = quantity * sales_rate * commission_rate/100
-  end
-
+  
 end

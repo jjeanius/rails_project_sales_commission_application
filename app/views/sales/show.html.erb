@@ -1,28 +1,7 @@
+<%= link_to "Edit Sales", edit_sale_path %>  *
 <%= render 'layouts/links' %> <br> <br>
 
 <h2> Sales Report </h2>
 
-=====================================================================================================
-<br>
-  <table>
-    <tr>
-      <th> <strong> Product ID </strong> </th> 
-        <th>  <strong> Product Name </strong> </th> 
-          <th>  <strong> Sales Quantity </strong> </th> 
-            <th>  <strong> Sales Rate </strong> </th> 
-          <th> <strong> Total Sales </strong> </th> 
-        <th> <strong>  Commission Rate </strong> </th> 
-        <th> <strong>  Commission Amount  </strong> </th> 
-      </tr> <br>
+<%= render 'show' %>
 
-    
-<td> <%= @sales.product_id %> </td> 
-        <td> <%= @sales.product_name %></td>
-          <td> <%= @sales.quantity %> </td> 
-          <td> <%= @sales.sales_rate %> % </td> 
-        <td> $ <%= @sales.quantity * @sales.sales_rate %> </td> 
-      <td><%= @sales.commission_rate %> % </td> 
-   <td> $ <%= @sales.quantity * @sales.sales_rate * @sales.commission_rate/100 %> </td> 
-  </table> <br> <br>
-
-<%= button_to "delete", @sales, :method => :delete %>

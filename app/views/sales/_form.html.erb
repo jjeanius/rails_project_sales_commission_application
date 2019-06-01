@@ -2,10 +2,11 @@
 
 <div class="action">
     <%= f.label :employee_id %> : 
-      <%= f.collection_select(:employee_id, Employee.all, :id, :id) %>  
+    <%= f.collection_select(:employee_id, Employee.all, :id, :id) %>
+     
     <br> <br>
   </div>
-
+  
   <div class="action">
     <%= f.label :employee_name %> : 
       <%= f.collection_select(:employee_name, Employee.all, :id, :name) %>
@@ -28,17 +29,15 @@
   </div>
 
   <div class="action">
-    <%= f.label :sales_rate %> price per share:
+    <%= f.label :sales_rate %> Price Per Share:
       <%= f.number_field :sales_rate %><br><br>
   </div>
 
   <div class="action">
-    <%= f.label :commission_rate %> %
-      <%= f.number_field :commission_rate %><br><br>
+    <%= f.label :commission_rate %> : 
+      <%= f.number_field :commission_rate %> bps <br><br>
   </div>
 
     <%= f.submit "Submit" %>
     
- 
-
-<% end %>
+ <% end %>
