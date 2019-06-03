@@ -11,13 +11,13 @@
         <th> <strong> Commission Rate </strong> </th> 
         <th> <strong> Commission Amount </strong> </th> 
       </tr> <br>
-      <td> <%= @sales.id %>
+      <td> <%= @sales_id %>
       <td> <%= @sales.product_id %> </td> 
         <td> <%= @sales.product_name %></td>
-          <td> <%= @sales.quantity %> </td> 
-          <td> <%= @sales.sales_rate %> Per Share </td> 
+          <td> <%= @sales.quantity %> shares </td> 
+          <td> <%= @sales.sales_rate %> per shares </td> 
         <td> $ <%= @sales.quantity * @sales.sales_rate %> </td> 
-      <td><%= @sales.commission_rate %> BPS </td> 
+      <td><%= @sales.commission_rate %> bps </td> 
    <td> $ <%= @sales.quantity * @sales.sales_rate * @sales.commission_rate/10000 %> </td>
   
   </table> <br> <br>
