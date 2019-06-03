@@ -19,7 +19,7 @@
  <br> <br>
  <% @salez.each do |sales| %>
   <% if current_employee == sales.employee %>
-    <strong> Employee: </strong> <%= link_to sales.employee.name, employees_path(@employee) %> <br> 
+   
       <strong> Product Name: </strong> <%= link_to sales.product_name, sale_path(sales) %> <br>
         <strong> Quantity: </strong> <%= sales.quantity %> shares <br> 
          <strong> Sales Rate: </strong> $  <%= sales.sales_rate %> per share <br>
