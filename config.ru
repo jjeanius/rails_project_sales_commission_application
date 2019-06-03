@@ -2,4 +2,6 @@
 
 require_relative 'config/environment'
 
+#require "execjs"
+
 run Rails.application
