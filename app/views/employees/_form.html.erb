@@ -2,7 +2,7 @@
 <%= link_to 'Edit Account', edit_employee_path %>  *
 <%= render 'layouts/links' %> 
 
-<h2> Score Board </h2> <br> 
+<h2> Scoreboard </h2> <br> 
 
 
 <strong> Region: </strong> <%= @employee.region %> <br> <br>
@@ -20,7 +20,7 @@
  <% @salez.each do |sales| %>
   <% if current_employee == sales.employee %>
    
-      <strong> Product Name: </strong> <%= link_to sales.product_name, sale_path(sales) %> <br>
+      <strong> Product Name: </strong> <%= link_to sales.product_name, employee_sale_path(@employee) %> <br>
         <strong> Quantity: </strong> <%= sales.quantity %> shares <br> 
          <strong> Sales Rate: </strong> $  <%= sales.sales_rate %> per share <br>
         <strong> Sales Amount: </strong> $ <%= sales.quantity * sales.sales_rate %><br>  
