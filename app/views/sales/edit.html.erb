@@ -5,4 +5,6 @@
 <br>
 <h2> Edit Sales </h2>
 <br>
+<% if current_employee == @sales_employee %>
 <%= render 'form'%>
+<% end %>

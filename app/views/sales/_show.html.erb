@@ -1,6 +1,7 @@
 <fieldset>
 <br>
   <table>
+ 
     <tr>
     <th> <strong> Sales ID </strong> </th>
       <th> <strong> Product ID </strong> </th> 
@@ -21,7 +22,8 @@
    <td> $ <%= @sales.quantity * @sales.sales_rate * @sales.commission_rate/10000 %> </td>
   
   </table> <br> <br>
-  <%= button_to "Delete Sales", @sales, :method => :delete %> <br> <br>
+ <!-- <%= button_to "Delete Sales", @sales, :method => :delete %> <br> <br>  -->
+  
 
   </fieldset><br> <br> 
 

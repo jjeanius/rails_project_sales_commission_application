@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+ 
     if @product && @product.save
       redirect_to product_path(@product)
     else
@@ -48,7 +49,7 @@ class ProductsController < ApplicationController
   private
 
   def set_product
-    @product =  Product.find_by(id: params[:id])
+    @product = Product.find_by(id: params[:id])
   end
 
   def product_params

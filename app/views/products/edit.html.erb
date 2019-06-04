@@ -4,14 +4,6 @@
 
 <%= form_for @product, :method => :put do |f| %>
 
-  <strong> <%= f.label :name %> </strong>
-    <%= f.text_field :name %>
-      <%= f.fields_for :product, Product.create do|product_fields| %> <br><br>
+  <%= render 'form' %>
 
-      <strong> <%= f.label :description %> </strong>
-      <%= f.text_area :description %> <br> <br>
-  
-    <strong> <%= f.submit "Submit" %> <strong>
-  <% end %>
-
-<% end %> <br>
+  <% end %> <br>
