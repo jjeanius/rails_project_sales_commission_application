@@ -1,3 +1,11 @@
+ require 'pry'
+ 
+ #Rails.application.config.middleware.use OmniAuth::Builder do
+  #binding.pry
+  #provider :amazon, ENV['CLIENT_ID'], ENV['CLIENT_SECRET'],
+#    {:scope => 'profile employee_id'} # default scope}
+#end
+
 # frozen_string_literal: true
 
 # Use this hook to configure devise mailer, warden hooks and so forth.
@@ -246,7 +254,7 @@ Devise.setup do |config|
   # ==> Navigation configuration
   # Lists the formats that should be treated as navigational. Formats like
   # :html, should redirect to the sign in page when the user does not have
-  # access, but formats like :xml or :json, should return 401.
+  # access, but formats like  :xml or :json, should return 401.
   #
   # If you have any extra navigational formats, like :iphone or :mobile, you
   # should add them to the navigational formats lists.
@@ -261,8 +269,14 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-
-  # ==> Warden configuration
+  config.omniauth :amazon, ENV['CLIENT_ID'], ENV['CLIENT_SECRET'], scope: 'profile:employee_id'    #'employee,public_repo'
+  
+  
+  
+  
+  
+  
+  # ==> Warden configuration 
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
   #
