@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'welcome#home'
   devise_for :employees, :controllers => {:callbacks => "amazon/callbacks"} # :controllers =>{registrations: 'registrations'}
+     #telling devise not to use its namespace for the controller  
 
   resources :employees do
     resources :sales, only: [:index, :new, :show]

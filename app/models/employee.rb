@@ -8,7 +8,7 @@ class Employee < ApplicationRecord
   has_many :products, through: :sales
   attribute :admin
 
-  def self.from_omniauth(auth)
+  def self.from_omniauth(auth)  # find or create an employee with these attribute by amazon
        where(provider: auth.provider, uid: auth.uid).first_or_create do |employee|
          employee.provider = auth.provider
          employee.uid = auth.uid
