@@ -1,7 +1,7 @@
  require 'pry'
  
- # Rails.application.config.middleware.use OmniAuth::Builder do
-  # provider :amazon, ENV['CLIENT_ID'], ENV['CLIENT_SECRET']
+ #Rails.application.config.middleware.use OmniAuth::Builder do
+ #provider :amazon, ENV['CLIENT_ID'], ENV['CLIENT_SECRET']
  #end
 
 # frozen_string_literal: true
@@ -24,7 +24,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'judyjmcgoldrick@gmail.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -267,7 +267,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :amazon, ENV['CLIENT_ID'], ENV['CLIENT_SECRET'], scope: 'profile:employee_email'
+  config.omniauth :amazon, ENV['CLIENT_ID'], ENV['CLIENT_SECRET']   #scope: 'profile:employee_email'
     # configure Omniauth instead of adding a separate initializer  
 
   # ==> Warden configuration 

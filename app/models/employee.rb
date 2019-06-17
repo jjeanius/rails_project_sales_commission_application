@@ -8,7 +8,7 @@ class Employee < ApplicationRecord
   has_many :products, through: :sales
   attribute :admin
 
-  def self.from_omniauth(auth)  # find or create an employee with these attribute by amazon
+  def self.from_omniauth(auth)  
        where(provider: auth.provider, uid: auth.uid).first_or_create do |employee|
          employee.provider = auth.provider
          employee.uid = auth.uid
@@ -16,5 +16,7 @@ class Employee < ApplicationRecord
          employee.password = Devise.friendly_token[0,20]
         end
       end
-    
- end 
+      
+    end 
+    # find or create an employee with uid, giving provider that match the omniauth hatch
+    # if one is not find, we will create a new employee with these giving attribute by amazon
