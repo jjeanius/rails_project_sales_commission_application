@@ -12,18 +12,16 @@
         <th> <strong> Commission Rate </strong> </th> 
         <th> <strong> Commission Amount </strong> </th> 
       </tr> <br>
-      <td> <%= @sales_id %>
+      <td> <%= @sales.id %> <br>
       <td> <%= @sales.product_id %> </td> 
-        <td> <%= @sales.product_name %></td>
+        <td> <%= @sales.product_name %></td> 
           <td> <%= @sales.quantity %> shares </td> 
           <td> <%= @sales.sales_rate %> per shares </td> 
         <td> $ <%= @sales.quantity * @sales.sales_rate %> </td> 
       <td><%= @sales.commission_rate %> bps </td> 
-   <td> $ <%= @sales.quantity * @sales.sales_rate * @sales.commission_rate/10000 %> </td>
+    <td> $ <%= @sales.quantity * @sales.sales_rate * @sales.commission_rate/10000 %> </td>
   
-  </table> <br> <br>
+  </table> <br> 
  <!-- <%= button_to "Delete Sales", @sales, :method => :delete %> <br> <br>  -->
-  
-
-  </fieldset><br> <br> 
+   </fieldset><br> <br> 
 

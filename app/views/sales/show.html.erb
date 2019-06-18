@@ -1,9 +1,11 @@
 <%= link_to "Edit Sales", edit_sale_path %>  *
+
 <%= render 'layouts/links' %> <br> <br>
 
 <h2> Sales Report </h2>
+ 
+<% if current_employee  %>
 
-<% if current_employee == @sales_employee %>
 <%= render 'show' %>
 
 <% end %>

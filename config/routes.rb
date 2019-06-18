@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'employees/auth/:amazon/callback', to: 'employees#index'
+  
   root 'welcome#home'
   
   devise_for :employees, :controllers => {:omniauth_callbacks => "callbacks"} # :controllers =>{registrations: 'registrations'}
     #telling devise not to use its namespace for the controller  
-  get 'employees/index'
+  
 
   resources :employees do
     resources :sales, only: [:index, :new, :show]
@@ -15,7 +17,6 @@ Rails.application.routes.draw do
   
   delete 'products/:id', to: 'products#destroy'
 
-  get '/auth/amazon/callback' => 'welcome#home'
-
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

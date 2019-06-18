@@ -7,7 +7,7 @@ class SalesController < ApplicationController
      @sales = Sales.new
 
     if params[:employee_id]
-       @sales = Employee.find(params[:employee_id]).sales
+       @sales = Employee.find(params[:employee_id]).sales       
     else
       @salez = Sales.all
     end
@@ -29,7 +29,9 @@ class SalesController < ApplicationController
  end
 
   def show
-    set_sales
+    @sales = Sales.find_by(id: params[:id])
+   
+    #set_sales
   
     end
 
