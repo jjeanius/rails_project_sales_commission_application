@@ -10,7 +10,7 @@ class Employee < ApplicationRecord
   attribute :admin
 
   def self.from_omniauth(auth)  
-       where(provider: auth.provider, uid: auth.uid).find_or_create do |employee|  #find the employee record by uid and call the first record or initalize the new employee and using tap by passing a employee block
+       where(auth.slice(:provider, :uid)).find do |employee|  #find the employee record by uid and call the first record or initalize the new employee and using tap by passing a employee block
          employee.provider = auth.provider
          employee.uid = auth.uid
          employee.name = auth.name
@@ -18,11 +18,32 @@ class Employee < ApplicationRecord
          employee.position = auth.position         
          employee.email = auth.info.email
          employee.password = Devise.friendly_token[0,20]
-         employee.oauth_expires_at = Time.at(auth.credentials.expires_at)
+         
          employee.save!
+         # find or create an employee with uid, giving provider that match the omniauth hatch
+         # if one is not find, we will create a new employee with these giving attribute by amazon
         end
+       #   session[:employee_id] = @employee.id
+       #     redirect_to 'employees/index'
       end
-      
+
+      def auth
+        request.env['omniauth.auth']
+      end
+
+      def self.new_with_session(params, session)
+        if session["devise.employee_attributes"]
+          new(session["devise.employee_attributes"])
+          employee.attributes = params
+          employee.valid?
+          end
+        end
+
+
+
+
+
+
+           
     end 
-    # find or create an employee with uid, giving provider that match the omniauth hatch
-    # if one is not find, we will create a new employee with these giving attribute by amazon
+    

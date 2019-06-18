@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'employees/auth/:amazon/callback', to: 'employees#index'
+  
   
   root 'welcome#home'
   
@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   resources :sales
   
   delete 'products/:id', to: 'products#destroy'
-
+  
+  get 'employees/auth/:amazon/callback', to: 'employees#index'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
