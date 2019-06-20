@@ -2,7 +2,6 @@
 
 <h2> Edit Account </h2> <br>
 
-
 <%= form_for @employee, :method => :patch do |f| %>
 
 <div class="form-group">
@@ -19,10 +18,9 @@
 </div>
 
 <br> 
-<div class="action">
- <strong> <%= f.submit "Update Profile" %> </strong>
-</div>
-
-
+  <div class="action">
+    <strong> <%= f.submit "Update Profile" %> </strong>
+  </div>
 <% end %>
-<br> <br>
+<br> 
+<br>

@@ -2,20 +2,21 @@ require 'pry'
 
 class EmployeesController < ApplicationController
 
-  
-  def index
+ def index
     @employees = Employee.all
   end
     
-  def new
-    @employee = Employee.new
+  def new    
+    @employee = Employee.new(employee_params)
   end
 
   def create
-    @employee = Employee.new(employee_params)  
-      if @employee.save
+    @employee = Employee.new(employee_params)
+    binding.pry  
+     
+      if @employee && @employee.save
         session[:employee_id] = @employee.id
-       redirect_to employee_path(@employee)
+        redirect_to employee_path(@employee)
       else
         render :new
       end
@@ -37,7 +38,7 @@ class EmployeesController < ApplicationController
       if @employee && @employee.update(employee_params)
         redirect_to @employee
       else
-        render :edit_employees_path
+        render :edit_employee_path
     end
   end 
     

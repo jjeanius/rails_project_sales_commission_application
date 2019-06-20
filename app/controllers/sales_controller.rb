@@ -15,12 +15,13 @@ class SalesController < ApplicationController
 
   def new
     @sales = Sales.new(employee_id: params[:employee_id])
-   
-    end 
+    #@sales = current_employee.sales.build
+  end 
  
     
   def create
     @sales = Sales.new(sales_params) 
+   # @sales = current_employee.sales.build(sales_params)
      if @sales && @sales.save
        redirect_to sales_path(@sales)
     else
@@ -29,11 +30,8 @@ class SalesController < ApplicationController
  end
 
   def show
-    @sales = Sales.find_by(id: params[:id])
-   
-    #set_sales
-  
-    end
+    set_sales
+  end
 
   def edit
     set_sales
