@@ -15,14 +15,13 @@ class SalesController < ApplicationController
 
   def new
     @sales = Sales.new(employee_id: params[:employee_id])
-    #@sales = current_employee.sales.build
-  end 
+   end 
  
     
   def create
     @sales = Sales.new(sales_params) 
    # @sales = current_employee.sales.build(sales_params)
-     if @sales && @sales.save
+     if @sales.save
        redirect_to sales_path(@sales)
     else
       redirect_to new_sale_path
@@ -35,10 +34,11 @@ class SalesController < ApplicationController
 
   def edit
     set_sales
-  end
+   end
 
   def update
     set_sales
+    binding.pry
      if @sales && @sales.update(sales_params)
      #format.html { redirect_to @sales, notice: 'Sales was successfully updated.' }
       redirect_to @sales

@@ -7,6 +7,7 @@ class Employee < ApplicationRecord
   validates_uniqueness_of :email, :name
   has_many :sales
   has_many :products, through: :sales
+ # accepts_nested_attributes_for :sales, allow_destroy: true, reject_if: proc {|att| att['name'].blank? }
   attribute :admin
 
   def self.from_omniauth(auth)  
@@ -35,5 +36,5 @@ class Employee < ApplicationRecord
           super
         end
       end
-      
+
     end

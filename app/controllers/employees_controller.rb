@@ -12,7 +12,7 @@ class EmployeesController < ApplicationController
 
   def create
     @employee = Employee.new(employee_params)
-    binding.pry  
+   
      
       if @employee && @employee.save
         session[:employee_id] = @employee.id
@@ -30,7 +30,7 @@ class EmployeesController < ApplicationController
 
   def edit
     set_employee
-   
+    binding.pry   
   end
 
   def update

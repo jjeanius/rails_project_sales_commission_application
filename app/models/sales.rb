@@ -1,6 +1,6 @@
 class Sales < ApplicationRecord
-  belongs_to :employee
-  belongs_to :product
+  belongs_to :employee, optional: true
+  belongs_to :product, optional: true
   accepts_nested_attributes_for :employee, allow_destroy: true
   accepts_nested_attributes_for :product, allow_destroy: true
   validates :employee_name, :product_name, :sales_rate, :quantity, :commission_rate, presence: true, allow_blank: false
