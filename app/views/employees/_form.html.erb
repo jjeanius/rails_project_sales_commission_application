@@ -11,8 +11,7 @@
     <strong> Job Title: </strong> <%= @employee.position %> <br><br> 
     <strong> Email: </strong> <%= @employee.email %> <br><br> 
 
-  <!-- <%= button_to "Delete", @employee, :method => :delete %><br>  -- # for Admin only -->
-
+  <%= button_to "Delete", @employee, :method => :delete %><br> 
 ================================================================================================
   <br> <br>
     <% @salez.each do |sales| %>

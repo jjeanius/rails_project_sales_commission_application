@@ -1,16 +1,59 @@
-<%= form_for  @sales, url: sales_path do |f| %>
+<%= form_for @sales, url: sales_path do |f| %>
+  
+  <%= f.fields_for :employees do |builder| %>
+
+    <div class="action">
+      <%= builder.label :employee_name %> : 
+        <%= builder.collection_select(:employee_name, Employee.all, :name, :name) %> <br> <br>      
+    </div>
+
+    <div class="action">
+      <%= builder.label :employee_id %> : 
+        <%= builder.collection_select(:employee_id, Employee.all, :id, :id) %> <br> <br>
+    </div>
+
+    <div class="action">
+      <%= f.label :product_name %> :
+        <%= f.collection_select(:product_name, Product.all, :name, :name) %> <br><br>
+    </div>
+
+    <div class="action">
+      <%= f.label :product_id %> Number :
+        <%= f.collection_select(:product_id, Product.all, :id, :id) %> <br><br>
+    </div>
+
+  <div class="action">
+    <%= f.label :quantity %> :
+      <%= f.number_field :quantity %> shares <br><br>
+  </div>
+
+  <div class="action">
+    <%= f.label :sales_rate %> 
+      <%= f.number_field :sales_rate %> per share <br><br>
+  </div>
+
+  <div class="action">
+    <%= f.label :commission_rate %> : 
+      <%= f.number_field :commission_rate %> bps <br><br>
+  </div> <br>
+
+    <%= f.submit "Submit" %> 
+    
+  <% end %> 
+ 
+<% end %>
+
+
+<!-- <%= form_for @sales, url: sales_path do |f| %>
 
 <div class="action">
     <%= f.label :employee_id %> : 
-    <%= f.collection_select(:employee_id, Employee.all, :id, :id) %>
-     
-    <br> <br>
+    <%= f.collection_select(:employee_id, Employee.all, :id, :id) %> <br> <br>
   </div>
   
   <div class="action">
     <%= f.label :employee_name %> : 
-      <%= f.collection_select(:employee_name, Employee.all, :id, :name) %>
-    <br> <br>
+      <%= f.collection_select(:employee_name, Employee.all, :id, :name) %> <br> <br>
   </div>
 
   <div class="action">
@@ -29,8 +72,8 @@
   </div>
 
   <div class="action">
-    <%= f.label :sales_rate %> Price Per Share:
-      <%= f.number_field :sales_rate %><br><br>
+    <%= f.label :sales_rate %> 
+      <%= f.number_field :sales_rate %> per share <br><br>
   </div>
 
   <div class="action">

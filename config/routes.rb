@@ -8,13 +8,12 @@ Rails.application.routes.draw do
     resources :sales, only: [:index, :new, :show]
   end
   
-  resources :products
   resources :sales
+  resources :products
   
-
+  
   delete 'products/:id', to: 'products#destroy'
-  Patch '/sales/:id', to: 'sales'
-
+  
   get 'employees/auth/:amazon/callback', to: 'employees#index'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

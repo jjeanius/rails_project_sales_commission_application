@@ -5,15 +5,14 @@
 <br>
 <h2> Edit Sales </h2>
 <br>
-<% if current_employee == @sales.employee%>
-<!-- <%= render 'form' %> -->
-<%= form_for @sales do |f| %>
+<% if current_employee == @sales.employee %>
 
+<!-- <%= render 'form' %> -->
+
+<%= form_for @sales do |f| %> 
 <div class="action">
     <%= f.label :employee_id %> : 
-    <%= f.collection_select(:employee_id, Employee.all, :id, :id) %>
-     
-    <br> <br>
+    <%= f.collection_select(:employee_id, Employee.all, :id, :id) %> <br> <br>
   </div>
   
   <div class="action">
@@ -38,8 +37,8 @@
   </div>
 
   <div class="action">
-    <%= f.label :sales_rate %> Price Per Share:
-      <%= f.number_field :sales_rate %><br><br>
+    <%= f.label :sales_rate %> :
+      <%= f.number_field :sales_rate %> per share <br><br>
   </div>
 
   <div class="action">
