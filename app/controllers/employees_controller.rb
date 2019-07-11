@@ -11,8 +11,7 @@ class EmployeesController < ApplicationController
   end
 
   def create
-    @employee = Employee.new(employee_params)
-   
+    @employee = Employee.new(employee_params)   
      
       if @employee && @employee.save
         session[:employee_id] = @employee.id
@@ -25,12 +24,11 @@ class EmployeesController < ApplicationController
   def show
     set_employee
      @salez = Sales.all
-          
+    
   end
 
   def edit
-    set_employee
-    binding.pry   
+    set_employee   
   end
 
   def update
@@ -43,8 +41,8 @@ class EmployeesController < ApplicationController
   end 
     
   def destroy
-          set_employee.delete
-      #session[employee_id].delete
+    set_employee.destroy
+      #session[employee_id].destroy
       redirect_to root_path
   end
 
@@ -52,11 +50,13 @@ class EmployeesController < ApplicationController
 private
 
   def set_employee
+    if current_employee
     @employee = Employee.find_by(id: params[:id])
+    end
   end
 
   def employee_params
-    params.require(:employee).permit(:employee, :name, :region, :position, :email, :password, :password_confirmation, :admin)
+    params.require(:employee).permit(:name, :region, :position, :email, :password, :password_confirmation, :admin)
   end
 
  

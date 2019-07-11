@@ -13,8 +13,13 @@
 
   <%= button_to "Delete", @employee, :method => :delete %><br> 
 ================================================================================================
-  <br> <br>
-    <% @salez.each do |sales| %>
+<br> <br>
+
+<%= link_to "New Sales", new_employee_sale_path(@employee) %> 
+
+<br> <br>
+    <% @salez.each do |sales| %> 
+
       <% if current_employee == sales.employee %>
       
         <strong> Product Name: </strong> <%= link_to sales.product_name, employee_sale_path(@employee) %> <br>

@@ -1,8 +1,8 @@
- require 'pry'
+require 'pry'
  
- #Rails.application.config.middleware.use OmniAuth::Builder do
- #provider :amazon, ENV['CLIENT_ID'], ENV['CLIENT_SECRET']
- #end
+ # Rails.application.config.middleware.use OmniAuth::Builder do
+ # provider :amazon, ENV['CLIENT_ID'], ENV['CLIENT_SECRET']
+ # end
 
 # frozen_string_literal: true
 

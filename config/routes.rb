@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   devise_for :employees, controllers: {:registrations=> "registrations", :omniauth_callbacks => "callbacks",  }   #telling devise not to use its namespace for the controller
   
   resources :employees do
-    resources :sales, only: [:index, :new, :show]
+    resources :sales, only: [:show, :index, :new]
   end
   
   resources :sales
   resources :products
-  
+
   
   delete 'products/:id', to: 'products#destroy'
   
