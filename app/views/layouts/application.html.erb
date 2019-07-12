@@ -21,6 +21,17 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <h4 class="text-white h4">
+    <% if current_employee %>
+    <a class="navbar-brand" href="<%= root_path %>"/>Main Menu</a>
+    <a class="navbar-brand" href="<%= employees_path %>"Employee Account</a>
+    <a class="navbar-brand" href="<%= products_path %>"/Product"</a> 
+    <a class="navbar-brand" href="<%= sales_path %>"/Sale"</a> 
+    <a class="navbar-brand" href="<%= destroy_employee_session_path %>"/Sign Out" </a>
+   
+   <% end %>
+  </h5>
+
   </nav>
 </div>
 </head>
