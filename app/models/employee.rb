@@ -1,7 +1,7 @@
 class Employee < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  has_secure_password
+ #  has_secure_password
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, :omniauth_providers => [:amazon]  #adding omniauthable 
@@ -11,8 +11,9 @@ class Employee < ApplicationRecord
  # accepts_nested_attributes_for :sales, allow_destroy: true, reject_if: proc {|att| att['name'].blank? }
   attribute :admin
 
-  def self.from_omniauth(auth)  
-       where(provider: auth.provider, uid: auth.uid).first_or_create do |employee|  #find the employee record by uid and call the first record or initalize the new employee and using tap by passing a employee block
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |employee|   #find the employee record by uid and call the first record or initalize the new employee and using tap by passing a employee block
          employee.provider = auth.provider
          employee.uid = auth.uid
          # employee.name = auth.name

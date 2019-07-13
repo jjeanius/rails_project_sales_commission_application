@@ -1,13 +1,13 @@
-<%= link_to "Edit Product", edit_product_path(@product) %>  *
-<%= render 'layouts/links' %>
+
+<%= render 'layouts/product_links' %>  /  <br> <br>
 
 <h2> Product information </h2> <br>
 
   <strong> Product Name: </strong> <%= @product.name %> <br> <br>
-    <strong> Product Description: </strong> <%= @product.description %>
+    <strong> Product Description: </strong> <%= @product.description %> <br> <br>
+    <%= link_to 'Edit Product', edit_product_path(@product) %>  /
       <br> <br>
  
-<%= button_to "Delete", @product, :method => :delete %> <br> <br>
- 
+
   
  
