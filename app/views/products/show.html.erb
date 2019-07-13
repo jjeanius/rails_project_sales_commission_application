@@ -1,12 +1,15 @@
 
-<%= render 'layouts/product_links' %>  /  <br> <br>
-
+<%= render 'layouts/product_links' %><br> 
+<nav class="navbar navbar-light bg-light"> 
+ <p> <%= link_to 'Edit Your Product', edit_product_path(@product) %> </p> 
+</nav>
+<br> <br>
+   
 <h2> Product information </h2> <br>
 
   <strong> Product Name: </strong> <%= @product.name %> <br> <br>
     <strong> Product Description: </strong> <%= @product.description %> <br> <br>
-    <%= link_to 'Edit Product', edit_product_path(@product) %>  /
-      <br> <br>
+    
  
 
   

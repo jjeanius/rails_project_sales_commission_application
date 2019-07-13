@@ -1,8 +1,10 @@
+
+
 <%= render 'layouts/product_links' %> <br> <br>
 
 <h2> Product List </h2>
 <ol>
-<% @products.each do|product| %> 
+<% @products.each do|product| %> <br>
   <li> Product Number: <%= product.id %> <br> 
     Product Name: <%= link_to product.name, product_path(product) %> <br>
       Product Description: <%= product.description %> <br> <br></li>
