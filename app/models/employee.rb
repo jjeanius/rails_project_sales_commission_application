@@ -5,7 +5,14 @@ class Employee < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, :omniauth_providers => [:amazon]  #adding omniauthable 
-  validates_uniqueness_of :email, :name
+  
+  validates_uniqueness_of :email, presence: true, allow_blank: false
+  validates_uniqueness_of :name,  presence: true, allow_blank: false
+  validates :region, presence: true, allow_blank: false
+  validates :password, presence: true, allow_blank: false
+  validates :password_confirmation, presence: true, allow_blank: false
+  validates :position, presence: true, allow_blank: false
+
   has_many :sales
   has_many :products, through: :sales
  # accepts_nested_attributes_for :sales, allow_destroy: true, reject_if: proc {|att| att['name'].blank? }
