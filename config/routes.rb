@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   delete 'products/:id', to: 'products#destroy'
   
   get 'employees/auth/:amazon/callback', to: 'employees#index'
+
+  patch '/sales/:id', to: 'sales#update'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-light">
-<strong> Links: </strong> <br>
+<strong> Sale Links: </strong> <br>
 
 <% if current_employee %>
 <%= link_to 'Sales Report', sales_path %>  /
@@ -24,16 +24,16 @@
     <th> <strong> Sales ID </strong> </th>
       <th> <strong> Product ID </strong> </th> 
         <th> <strong> Product Name </strong> </th> 
-          <th> <strong> Sales Quantity </strong> </th> 
+          <th> <strong> Quantity </strong> </th> 
             <th> <strong> Sales Rate </strong> </th> 
           <th> <strong> Total Sales </strong> </th> 
         <th> <strong> Commission Rate </strong> </th> 
         <th> <strong> Commission Amount </strong> </th> 
       </tr> <br>
 
-     <td> <%= @sales.id %> <br>
+     <td> <%= @sales_id %> <br>
       <td> <%= @sales.product_id %> </td> 
-        <td> <%= link_to @sales.product.name, product_path(@sales.product) if @sales.product %></td> 
+        <td> <%= link_to @sales.product_name %></td>         
           <td> <%= @sales.quantity %> shares </td> 
           <td> <%= @sales.sales_rate %> per shares </td> 
         <td> $ <%= @sales.quantity * @sales.sales_rate %> </td> 

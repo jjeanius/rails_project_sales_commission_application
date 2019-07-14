@@ -17,18 +17,12 @@ class SalesController < ApplicationController
    end  
     
   def create    
-    @sales = Sales.new(sales_params)  
-    binding.pry
-     if @sales.save
-       redirect_to sales_path
-    else
-      redirect_to new_sale_path
+    @sales = Sales.new(sales_params)  #  update the sales_params to accept employee_id
+      if @sales.save
+        redirect_to sales_path
+      else
+        redirect_to new_sale_path
     end 
-  end
-
-  def edit
-    set_sales
-    render :show
   end
 
   def show
@@ -38,10 +32,14 @@ class SalesController < ApplicationController
   def update
     set_sales   
      if @sales && @sales.update(sales_params)
-      redirect_to @sales
+       redirect_to sale_path
     else
       render :edit
     end
+  end
+
+  def edit
+    set_sales    
   end
     
   def destroy

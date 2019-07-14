@@ -1,13 +1,16 @@
 
-<%= render 'layouts/sale_links' %> <br> <br>
+<%= render 'layouts/sales_links' %> <br> <br>
 <br>
 <h2> Edit Sales </h2>
 <br>
 <% if current_employee %>
 
- <%= render 'form' %>
+<%= form_for @sales, :method => :put do |f| %>
 
-    
+  <%= render 'form' %>
+
+  <% end %> <br>
 <% end %>
 
-  
+
+<br> <br> <br>
