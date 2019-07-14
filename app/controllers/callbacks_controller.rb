@@ -4,6 +4,6 @@ class CallbacksController < Devise::OmniauthCallbacksController
     @employee = Employee.from_omniauth(request.env["omniauth.auth"])     
       sign_in_and_redirect @employee
         flash.notice = "Signed in!"  
-   
+        
   end
 end

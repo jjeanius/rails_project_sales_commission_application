@@ -1,16 +1,24 @@
 
-<%= render 'layouts/product_links' %><br> 
-<nav class="navbar navbar-light bg-light"> 
- <p> <%= link_to 'Edit Your Product', edit_product_path(@product) %> </p> 
+<nav class="navbar navbar-light bg-light">
+  <strong> Links: </strong> <br>
+
+    <% if current_employee %>
+      <%= link_to 'Product List', products_path %>  /
+        <%= link_to 'Create Product', new_product_path %>  /
+         <%= link_to 'Edit Product', edit_product_path(@product) %> / 
+      <%= link_to "Delete", @product, :method => :delete %> 
+    <% end %>
 </nav>
-<br> <br>
-   
-<h2> Product information </h2> <br>
+<br> <br><br>
+
+<h2> Product information </h2> <br><br>
 
   <strong> Product Name: </strong> <%= @product.name %> <br> <br>
-    <strong> Product Description: </strong> <%= @product.description %> <br> <br>
+    <strong> Product Description: </strong> <%= @product.description %> <br> <br> <br> 
     
  
+
+
 
   
  

@@ -4,24 +4,22 @@ class SalesController < ApplicationController
   
   def index
     @salez = Sales.all
-      @sales = Sales.new
-        if params[:employee_id]
-          @sales = Employee.find(params[:employee_id]).sales       
-         else
-           @salez = Sales.all
-         end
+    if params[:employee_id]   #  if sales has employee id
+       @sales = Employee.find(params[:employee_id]).salez    # want to access all sales by that employee       
+    else
+       @salez = Sales.all
+    end
   end
 
   def new
-    @sales = Sales.new
-    @sales = Sales.new(employee_id: params[:employee_id])
-    
-  end  
+   # @sales = Sales.new
+    @sales = Sales.new(employee_id: params[:employee_id])     #  capture employee_id through nested route   
+   end  
     
   def create    
-    @sales = Sales.new(sales_params)   
-     
-      if @sales.save
+    @sales = Sales.new(sales_params)  
+    binding.pry
+     if @sales.save
        redirect_to sales_path
     else
       redirect_to new_sale_path

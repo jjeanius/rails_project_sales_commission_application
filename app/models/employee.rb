@@ -20,6 +20,7 @@ class Employee < ApplicationRecord
          # employee.region = auth.region
          # employee.position = auth.position         
          employee.email = auth.info.email
+        
          employee.password = Devise.friendly_token[0,20]
            
         end
@@ -28,15 +29,6 @@ class Employee < ApplicationRecord
     # if one is not find, we will create a new employee with these giving attribute by amazon
 
 
-      def self.new_with_session(params, session)
-        if session['devise.employee_attributes']
-          new(session["devise.employee_attributes"], without_protection: true) do |employee|
-            employee.attributes = params
-            employee.valid?
-          end
-        else
-          super
-        end
-      end
+     
 
     end

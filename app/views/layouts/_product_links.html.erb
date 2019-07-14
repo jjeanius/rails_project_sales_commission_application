@@ -1,15 +1,11 @@
 <nav class="navbar navbar-light bg-light">
-<strong> Links: </strong> <br>
+  <strong> Links: </strong> <br>
 
-<% if current_employee %>
+    <% if current_employee %>
 
-<%= link_to 'Product List', products_path %>  /
-<%= link_to 'Edit Your Product', @product %> /
-<%= link_to 'Create Product', new_product_path %>  /
-
-<%= link_to "Delete", @product, :method => :delete %> 
-
-
-<% end %>
+      <%= link_to 'Product List', products_path %>  /
+        <%= link_to 'Create Product', new_product_path %>  
+     
+    <% end %>
 
 </nav>

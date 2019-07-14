@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light bg-light">
+<strong> Links: </strong> <br>
+
+<% if current_employee %>
+
+<%= link_to 'Sales Report', sales_path %>  /
+<%= link_to 'New Sale', new_employee_sale_path(current_employee) %> 
+<br> <br> 
+
+<% end %>
+
+</nav>

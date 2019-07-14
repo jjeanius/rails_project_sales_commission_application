@@ -25,18 +25,17 @@
     <span class="navbar-toggler-icon"></span>
     </button>
     <nav class="navbar navbar-dark-dark">
-    
-   
+     
     <% if current_employee %>
     
     <a class="text-white navbar-brand" href="<%= root_path %>"/> Main Menu </a> 
-    <a class="text-white navbar-brand" href="<%= employees_path %>"/> Employee </a> 
+    <a class="text-white navbar-brand" href="<%= employees_path %>"/>Employee </a> 
     <a class= "text-white navbar-brand"href="<%= products_path %>"/> Product </a> 
     <a class="text-white navbar-brand" href="<%= sales_path %>"/> Sale </a>
-    <a class="text-white navbar-brand" <%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br> <br> </a> 
+    <a class="text-white navbar-brand" <%= link_to 'Sign Out', destroy_employee_session_path, method: :delete %> <br> <br> </a> 
 
     <% end %>
-
+   
   </nav>
 </div>
 </head>

@@ -1,38 +1,32 @@
+<br> <br>
+
 <%= form_for @sales, url: sales_path do |f| %>
  
    <div class="action">	
-     <%= f.label :employee_name %> : 	
-       <%= f.collection_select(:employee_id, Employee.all, :id, :name) %> <br> <br>      	
-   </div>	
+     <strong> <%= f.label :employee_name %> : </strong> <%= current_employee.name %> 
+      <!-- <%= f.collection_select(:employee_id, Employee.all, :id, :name) %> <br> <br> -->     	
+      <%= f.hidden_field :employee_id %> 
+   </div> <br> 
 
    <div class="action">
-   <%= f.hidden_field :employee_id %>
-   </div>
-
-   <div class="action">
-   <%= f.label :product_name %> :
+   <strong> <%= f.label :product_name %> : </strong>
      <%= f.collection_select(:product_name, Product.all, :name, :name) %><br><br> 
+    <%=f.hidden_field :product_id %><br>
    </div>
 
-   <div class="action">
-    <%= f.label :product_id %> Number :  
-     <%= f.collection_select(:product_id, Product.all, :id, :id) %> <br><br> 
-        <!--<%=f.hidden_field :product_id %><br><br>-->
-  </div>
-
-   <div class="action">
-      <%= f.label :quantity %> :
-        <%= f.number_field :quantity %> shares <br><br>
+     <div class="action">
+      <strong> <%= f.label :quantity %> : </strong>
+        <%= f.number_field :quantity %> <strong> shares </strong> <br><br>
     </div>
 
     <div class="action">
-      <%= f.label :sales_rate %> $:
-        <%= f.number_field :sales_rate %> per share <br><br>
+      <strong> <%= f.label :sales_rate %> $: </strong>
+        <%= f.number_field :sales_rate %> <strong> per share </strong><br><br>
     </div>
 
     <div class="action">
-      <%= f.label :commission_rate %> : 
-        <%= f.number_field :commission_rate %> bps <br><br>
+      <strong> <%= f.label :commission_rate %> : </strong>
+        <%= f.number_field :commission_rate %> <strong> bps </strong> <br><br>
     </div> <br>
 
       <%= f.submit "Submit" %> 
