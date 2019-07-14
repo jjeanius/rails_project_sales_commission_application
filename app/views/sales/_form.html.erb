@@ -9,9 +9,9 @@
    </div> <br> 
 
    <div class="action">
-   <strong> <%= f.label :product_name %> : </strong>
-   <%=f.hidden_field :product_id %>      
-   <%= f.collection_select(:product_name, Product.all, :name, :name) %><br><br>       
+    <strong> <%= f.label :product_name %> : </strong>
+      <%= f.collection_select(:product_name, Product.all, :name, :name) %><br><br>   
+     <%=f.hidden_field :product_id %>
    </div>
 
      <div class="action">

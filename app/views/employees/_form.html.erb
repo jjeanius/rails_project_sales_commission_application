@@ -1,17 +1,19 @@
-  <%= render 'layouts/employee_links' %> <br> <br>
+  <%= render 'layouts/employee_links' %> <br>
 
-  <h2> Scoreboard </h2> <br> 
+  <h2> <strong> Scoreboard </strong></h2> <br> 
 
   <% if @employee == current_employee %>
-    <strong> Region: </strong> <%= @employee.region %> <br> <br>
-    <strong> Employee Number: </strong> <%= @employee.id %> <br> <br>
-    <strong> Name: </strong> <%= @employee.name %> <br> <br>
-    <strong> Job Title: </strong> <%= @employee.position %> <br><br> 
-    <strong> Email: </strong> <%= @employee.email %> <br><br> 
+
+  <h5> Employee Number: <%= @employee.id %></h5> <br> 
+    <h5> Name: <%= @employee.name %> </h5><br> 
+
+    <h5> Region: <%= @employee.region %> </h5><br> 
+    
+    <h5> Job Title: <%= @employee.position %></h5> <br>
+    <h5> Email: <%= @employee.email %></h5> <br>
 
   
 ================================================================================================
-<br> <br>
 
 <br> <br>
     <% @salez.each do |sales| %> 

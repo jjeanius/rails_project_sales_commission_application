@@ -12,9 +12,9 @@ class SalesController < ApplicationController
   end
 
   def new
-   # @sales = Sales.new
-    @sales = Sales.new(employee_id: params[:employee_id])     #  capture employee_id through nested route   
-   end  
+    @sales = Sales.new
+      @sales = Sales.new(employee_id: params[:employee_id])     #  capture employee_id through nested route   
+  end  
     
   def create    
     @sales = Sales.new(sales_params)  #  update the sales_params to accept employee_id

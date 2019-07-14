@@ -1,25 +1,28 @@
 <nav class="navbar navbar-light bg-light">
-<strong> Sale Links: </strong> <br>
+<h5> Sale Links:</h5>
 
 <% if current_employee %>
 <%= link_to 'Sales Report', sales_path %>  /
 <%= link_to 'New Sale', new_employee_sale_path(current_employee) %> /
 <%= link_to "Edit Sales", edit_sale_path %>  /
 <%= link_to "Delete Sales", @sales, :method => :delete %> 
-<br> <br> 
-
 <% end %>
 
 </nav>
-<br> <br>
+<br> <br> <br>
 
-<h2> Sales Report </h2> <br> <br>
-
+<h2> Sales Report </h2> 
 <% if current_employee %>
-
-<fieldset>
-<br>
-  <table>
+ 
+<table style="width:120%">
+  <col align="left">
+  <col align="left">
+  <col align="left">
+  <col align="center">
+  <col align="center">
+  <col align="right">
+  <col align="right">
+  <col align="right">
     <tr>
     <th> <strong> Sales ID </strong> </th>
       <th> <strong> Product ID </strong> </th> 
@@ -30,8 +33,8 @@
         <th> <strong> Commission Rate </strong> </th> 
         <th> <strong> Commission Amount </strong> </th> 
       </tr> <br>
-
-     <td> <%= @sales_id %> <br>
+    <tr>
+     <td> <%= @sales.id %> <br>
       <td> <%= @sales.product_id %> </td> 
         <td> <%= link_to @sales.product_name %></td>         
           <td> <%= @sales.quantity %> shares </td> 
@@ -39,12 +42,10 @@
         <td> $ <%= @sales.quantity * @sales.sales_rate %> </td> 
       <td><%= @sales.commission_rate %> bps </td> 
     <td> $ <%= (@sales.quantity * @sales.sales_rate * @sales.commission_rate)/10000 %> </td>
-  
-  </table> <br> 
+  </tr>
 
-    </fieldset><br> 
+  </table> 
+
+    
 <% end %> <br> <br>
-
-
-
 
