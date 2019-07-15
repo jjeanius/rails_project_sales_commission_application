@@ -1,26 +1,29 @@
  <%= render 'layouts/employee_links' %> <br> 
 
 <h2> Employee List </h2> <br> <br>
-<h5>
+
   <% @employees.each do |employee| %> 
 
   <% if employee == current_employee %>
 
-   Name: <%= link_to employee.name, employee_path(employee) %>  <br> 
-     Region:  <%= employee.region %>  <br> 
-       Job Tilte: <%= employee.position %>
-     Email: <%= employee.email %>   <br> 
+    Employee ID: <%= employee.id %> <br>
+      Name: <%= link_to employee.name, employee_path(employee) %>
+      <br> 
+        Region:  <%= employee.region %>  <br> 
+     Job Tilte: <%= employee.position %> <br>
+   Email: <%= employee.email %>   <br> 
 
   <% else %>
 
-     Name:  <%= employee.name %>  <br> 
+    Employee ID: <%= employee.id %> <br>
+      Name:  <%= employee.name %>  <br>       
        Region:  <%= employee.region %>  <br> 
-         Job Tilte:  <%= employee.position %> </li>
-       Email: <%= employee.email %>  </li> <br> 
+      Job Tilte:  <%= employee.position %> <br>
+     Email: <%= employee.email %>  <br> 
  
   <% end %> <br> 
   
-  </h5>
+  
 <% end %>
 
 

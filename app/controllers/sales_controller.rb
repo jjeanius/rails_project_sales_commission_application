@@ -13,12 +13,13 @@ class SalesController < ApplicationController
 
   def new
     @sales = Sales.new
-      @sales = Sales.new(employee_id: params[:employee_id])     #  capture employee_id through nested route   
+      @sales = Sales.new(employee_id: params[:employee_id], product_id: params[:product_id])     #  capture employee_id and product id through nested route   
   end  
     
   def create    
     @sales = Sales.new(sales_params)  #  update the sales_params to accept employee_id
-      if @sales.save
+    binding.pry
+      if@sales && @sales.save
         redirect_to sales_path
       else
         redirect_to new_sale_path
