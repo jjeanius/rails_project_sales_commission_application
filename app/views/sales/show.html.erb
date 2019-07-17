@@ -1,19 +1,17 @@
 <nav class="navbar navbar-light bg-light">
+<br><br>
 <h5> Sale Links:</h5>
-
-<% if current_employee %>
 <%= link_to 'Sales Report', sales_path %>  /
-<%= link_to 'New Sale', new_employee_sale_path(current_employee) %> /
+<%= link_to 'New Sale', new_employee_sale_path(@sales) %> /
 <%= link_to "Edit Sales", edit_sale_path %>  /
 <%= link_to "Delete Sales", @sales, :method => :delete %> 
-<% end %>
 
 </nav>
-<br> <br> <br>
+<br> <br> 
 
-<h2> Sales Report </h2> 
-<% if current_employee %>
- 
+<h2> Sales Report </h2> <br> 
+
+<% if current_employee = @sales.employee %> 
 <table style="width:120%">
   <col align="left">
   <col align="left">
@@ -36,16 +34,12 @@
     <tr>
      <td> <%= @sales.id %> <br>
       <td> <%= @sales.product_id %> </td> 
-        <td> <%= @sales.product_name %></td>         
+        <td> <%= link_to @sales.product_name, product_path(@sales)  %></td>         
           <td> <%= @sales.quantity %> shares </td> 
           <td> <%= @sales.sales_rate %> per shares </td> 
         <td> $ <%= @sales.quantity * @sales.sales_rate %> </td> 
       <td><%= @sales.commission_rate %> bps </td> 
     <td> $ <%= (@sales.quantity * @sales.sales_rate * @sales.commission_rate)/10000 %> </td>
   </tr>
-
   </table> 
-
-    
-<% end %> <br> <br>
-
+<% end %>

@@ -4,11 +4,9 @@
 <h2> Edit Sales </h2>
 <br>
 <% if current_employee %>
-
-<%= form_for @sales, :method => :put do |f| %>
-
-  <%= render 'form' %>
-
+  <%= form_for @sales, :method => :put do |f| %>
+    
+    <%= render 'form' %>
 
   <% end %> <br>
 <% end %>

@@ -1,5 +1,7 @@
+<br> <br>
+
 <% @salez.each do |sales| %>
-  <% if current_employee == sales.employee %>
+  <% if current_employee %>
     
     <strong> Employee: </strong> <%= link_to sales.employee_name, employees_path(@employee) %> <br> 
       <strong> Product Name: </strong> <%= link_to sales.product_name, sale_path(sales) %> <br>

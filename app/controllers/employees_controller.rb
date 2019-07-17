@@ -36,7 +36,7 @@ class EmployeesController < ApplicationController
       if @employee && @employee.update(employee_params)
         redirect_to @employee
       else
-        render :edit_employee_path
+        render :edit
     end
   end 
     
