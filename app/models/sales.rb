@@ -19,5 +19,8 @@ class Sales < ApplicationRecord
     self.employee = employee
   end    
    
+  def alpha
+    order(:region)
+  end
   
 end

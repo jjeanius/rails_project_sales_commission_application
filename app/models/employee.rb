@@ -7,11 +7,11 @@ class Employee < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, :omniauth_providers => [:amazon]  #adding omniauthable 
   
   validates_uniqueness_of :email, presence: true, allow_blank: false
-  #validates_uniqueness_of :name,  presence: true, allow_blank: false
-  # validates :region, presence: true, allow_blank: false
+  validates_uniqueness_of :name,  presence: true, allow_blank: false
+  validates :region, presence: true, allow_blank: false
   # validates :password, presence: true, allow_blank: false
   # validates :password_confirmation, presence: true, allow_blank: false
- # validates :position, presence: true, allow_blank: false
+  validates :position, presence: true, allow_blank: false
 
   has_many :sales
   has_many :products, through: :sales
