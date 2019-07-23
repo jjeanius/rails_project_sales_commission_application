@@ -1,9 +1,13 @@
 class WelcomeController < ApplicationController
   
   def home
-        
-  end
+    if current_employee.region.nil?
+      render 'welcome/account_profile'
+    else
+      render :home
+   end
 
+  end
 end
 
 

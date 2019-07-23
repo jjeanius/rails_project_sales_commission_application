@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2019_06_05_021209) do
     t.string "name"
     t.string "position"
     t.boolean "admin", default: false
+    t.string "password_digest"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

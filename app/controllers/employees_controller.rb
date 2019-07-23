@@ -56,7 +56,7 @@ private
   end
 
   def employee_params
-    params.require(:employee).permit(:name, :region, :position, :email, :password, :password_confirmation, :admin)
+    params.require(:employee).permit(:name, :region, :position, :email, :password, :password_confirmation, :password_digest, :admin)
   end
 
  
