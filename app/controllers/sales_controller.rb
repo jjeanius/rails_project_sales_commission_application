@@ -50,6 +50,7 @@ class SalesController < ApplicationController
         redirect_to sales_path
   end
 
+  
 
   private
 

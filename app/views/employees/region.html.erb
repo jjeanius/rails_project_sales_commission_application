@@ -1,8 +1,18 @@
-<%= render 'layouts/employee_links' %> <br> 
+<nav class="navbar navbar-light bg-light">
+
+<h5> Employee Links:</h5> 
+
+<a class="nav-item nav-link active"> <%= link_to 'Employee List', employees_path %> </a> /
+<a class="nav-item nav-link active"> <%= link_to 'Scoreboard', current_employee %> </a> / 
+<a class="nav-item nav-link active"> <%= link_to 'Edit Employee', edit_employee_path(current_employee) %></a> /
+<a class="nav-item nav-link active"> <%= link_to "New Sales", new_employee_sale_path(current_employee) %></a> 
+
+</nav>
+<br> <br>  
 
 <h2> Employee List </h2> <br> <br>
 
-  <% @employees.each do |employee| %> 
+  <% @employee.each do |employee| %> 
 
   <% if employee == current_employee %>
 
@@ -27,9 +37,6 @@
   <% end %> <br> 
 
   
-  
-  
 <% end %>
 
 
- 

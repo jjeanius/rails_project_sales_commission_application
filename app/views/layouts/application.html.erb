@@ -5,72 +5,62 @@
     <title>Retails Sales Commission System</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
-
-<head>
+   <head>
    <link href="https://fonts.googleapis.com/css?family=Lato|PT+Serif|Spectral+SC|Yrsa&display=swap" rel="stylesheet"> 
     <style>
       body {
         font-family: 'Yrsa', serif;
-        font-size: 18px;
-      }
+        font-size: 18px;}
     </style>
   </head>
-
-
-
-
 
   <head>
   <div class="pos-f-t">
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
-      <h5 class="text-white h5">Retails Sales Commission System </h5> 
-      <span class="text-muted"> Jeanius Financial Group </span>
+      <h5 class="text-white h5"> Jeanius Financial Investment Group </h5> 
+      <span class="text-muted">Retails Sales Commission System </span>
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      
-    
-    
+        
     <span class="navbar-toggler-icon"></span>
     </button>
+
+    
     <nav class="navbar navbar-dark-dark">
      
     <% if current_employee %>
-    
     <a class="text-white navbar-brand" href="<%= root_path %>"/> Main Menu </a> 
     <a class="text-white navbar-brand" href="<%= employees_path %>"/>Employee </a> 
     <a class= "text-white navbar-brand"href="<%= products_path %>"/> Product </a> 
     <a class="text-white navbar-brand" href="<%= sales_path %>"/> Sale </a>
     <a class="text-white navbar-brand" <%= link_to 'Sign Out', destroy_employee_session_path, method: :delete %> <br> <br> </a> 
-
     <% end %>
    
   </nav>
 </div>
 </head>
-
+<body>
 <div class="container">
 
   <%= render 'layouts/alerts' %>
   
-      <%= yield %>
-  
-
+      <%= yield %> 
     
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-
-
-
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </div>
+    <br>
+    <br>
+    <br>
+
+    <p>     Copy right - J.McGoldrick </P>
   </body>
 </html>

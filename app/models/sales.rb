@@ -18,9 +18,9 @@ class Sales < ApplicationRecord
     employee = Employee.find_or_create_by(name: name)
     self.employee = employee
   end    
-   
-  def alpha
-    order(:region)
-  end
   
+ 
+  
+scope :max_commission, -> {where('commission_amount > 300')}
+
 end

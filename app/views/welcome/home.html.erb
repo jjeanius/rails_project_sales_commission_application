@@ -1,7 +1,7 @@
 <h1>   Welcome ! </h1> <br>
 
 
-<% if current_employee %> 
+<% if current_employee  %> 
   <h4> Category </h4> 
 
   <%= link_to  'Employee Account', employees_path %><br> 
@@ -11,6 +11,7 @@
 <h4> Reports </h4>
 
 <%= link_to  'Employees', employees_path %><br> 
+<%= link_to  'Employee Region', region_path %><br> 
 <%= link_to 'Sales Report', sales_path %> <br> 
 <%= link_to 'Product Reports', products_path %> <br> <br> 
 <%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br>

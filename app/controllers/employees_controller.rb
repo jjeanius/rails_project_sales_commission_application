@@ -1,5 +1,4 @@
 require 'pry'
-
 class EmployeesController < ApplicationController
 
  def index
@@ -43,9 +42,13 @@ class EmployeesController < ApplicationController
   def destroy
     set_employee.destroy
       #session[employee_id].destroy
-      redirect_to root_path
+    redirect_to root_path
   end
-
+ 
+  def region
+   
+    @employee = Employee.region
+  end
 
 private
 
@@ -58,7 +61,6 @@ private
   def employee_params
     params.require(:employee).permit(:name, :region, :position, :email, :password, :password_confirmation, :password_digest, :admin)
   end
-
  
 
 end
