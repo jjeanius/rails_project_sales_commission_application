@@ -1,5 +1,5 @@
 require 'pry'
- 
+
  # Rails.application.config.middleware.use OmniAuth::Builder do
  # provider :amazon, ENV['CLIENT_ID'], ENV['CLIENT_SECRET']
  # end
@@ -267,10 +267,10 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :amazon, ENV['CLIENT_ID'], ENV['CLIENT_SECRET']   scope: 'profile:user_id'
-    # configure Omniauth instead of adding a separate initializer  
+  config.omniauth :amazon, ENV['CLIENT_ID'], ENV['CLIENT_SECRET']  #, scope: 'profile:user_id'
+    # configure Omniauth instead of adding a separate initializer
 
-  # ==> Warden configuration 
+  # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
   #
