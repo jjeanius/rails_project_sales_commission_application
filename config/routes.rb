@@ -23,6 +23,5 @@ Rails.application.routes.draw do
   get 'region', to: 'employees#region'
 
   
-  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
