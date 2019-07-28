@@ -11,12 +11,12 @@ The following are some of the guidelines for my application:
 Built with Ruby on Rails
 
 Installation
-• You can install the rails gem by typing gem install rails in the command line, if you don't have it already.
-• From the command line Run git   clone https://github.com/jjeanius/rails_project_sales_commission_application
-• Run bundle install
-• Run rake db:migrate
-• Run rails s to launch application in the browser.
-• View on localhost:3000
+<p>• You can install the rails gem by typing gem install rails in the command line, if you don't have it already.</p>
+<p>• From the command line Run git   clone https://github.com/jjeanius/rails_project_sales_commission_application </p>
+<p>• Run bundle install </p>
+<p>• Run rake db:migrate </p>
+<p>• Run rails s to launch application in the browser.</p>
+<p>• View on localhost:3000</p>
 
 Notes
 •	This application implements: Devise gem to authenticate users and allow them to log in;  create user by using OmniAuth Amazon
