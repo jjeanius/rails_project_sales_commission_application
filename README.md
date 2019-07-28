@@ -19,7 +19,7 @@ Built with Ruby on Rails
 <p>• View on localhost:3000</p>
 
 <strong> Notes </strong>
-<p>•	This application implements: Devise gem to authenticate users and allow them to log in;  create user by using OmniAuth Amazon </p>
+<p>•	This application implements: Devise gem to authenticate users and allow them to log in;  create user by using OmniAuth Amazon.   I picked Amazon as my OmniAuth identification provider over facebook, Twritter and Google because, my assumption is that employees like to keep their social media outlets private and most would not be comfortable to use their social media login to access their company’s system.   Also, I think given Amazon’s sales-oriented culture, it makes sense for this type of company to have horizontal expansion into a very different segment of the consumer market.  </p>
 <p>•	“sales” is referred to as a  singular sale, while “salez” is created and use as a plural form of sales </p>
 
 <strong> Contributer's Guide </strong>
@@ -28,7 +28,7 @@ File an issue with a pull request through Github. Terms and Conditions CONDITION
 
 <strong> Copyright </strong>
 
-Copyright Original work Copyright (c) 2012 [Acme Corp]
-Modified work Copyright 2019 Judy McGoldrick
+<p> Copyright Original work Copyright (c) 2012 [Acme Corp] </p>
+<p> Modified work Copyright 2019 Judy J. McGoldrick </p>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: the above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
