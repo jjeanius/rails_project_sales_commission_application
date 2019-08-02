@@ -3,6 +3,8 @@
 <br>
 <h2> Edit Sales </h2>
 <br>
+<%= render 'layouts/errors', :target => @sales %> <br>
+
 <% if current_employee %>
   <%= form_for @sales, :method => :put do |f| %>
     

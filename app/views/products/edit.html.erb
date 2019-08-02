@@ -1,6 +1,8 @@
 <h5> <%= render 'layouts/product_links' %> </h5>  <br>
 
-<h2> Edit Your Product: </h2>
+<h2> Edit Your Product: </h2> <br>
+
+<%= render 'layouts/errors', :target => @product %> <br>
 
 <%= form_for @product, :method => :put do |f| %>
 

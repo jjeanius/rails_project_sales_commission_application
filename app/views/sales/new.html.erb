@@ -1,7 +1,9 @@
 <h5><%= render 'layouts/sales_links' %></h5>
 <br> <br>
 
-<h2> New Sales </h2>
+<h2> New Sales </h2> <br> 
+
+<%= render 'layouts/errors', :target => @sales %> <br>
 
 <%= render 'form' %> 
 
