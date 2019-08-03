@@ -4,8 +4,8 @@ class Employee < ApplicationRecord
 
   validates_uniqueness_of :email, presence: true
   validates_uniqueness_of :name,  presence: true
-  # validates :region, presence: true
-  # validates :position, presence: true
+  validates :region, :presence => true, :on => :update
+  validates :position, :presence => true, :on =>:update
 
   has_many :sales
   has_many :products, through: :sales
@@ -26,7 +26,7 @@ def alpha
 end
 
 
- scope :region, -> {where('region="Florida"')}
+ scope :region, -> {where('region="New York"')}
 
 
 
