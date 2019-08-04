@@ -1,17 +1,16 @@
 
-<h5><%= render 'layouts/sales_links' %> </h5> <br> <br>
-<br>
-<h2> Edit Sales </h2>
-<br>
-<%= render 'layouts/errors', :target => @sales %> <br>
+<h5><%= render 'layouts/sales_links' %> </h5> <br> <br><br>
 
-<% if current_employee %>
-  <%= form_for @sales, :method => :put do |f| %>
-    
-    <%= render 'form' %>
+<h2> Edit Sales </h2><br>
 
-  <% end %> <br>
-<% end %>
+  <%= render 'layouts/errors', :target => @sales %> <br>
 
+    <% if current_employee %>
 
-<br> <br> <br>
+      <%= form_for @sales, :method => :put do |f| %>
+
+        <%= render 'form' %>
+
+      <% end %> <br>
+
+  <% end %><br> <br> <br>

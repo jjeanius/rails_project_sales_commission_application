@@ -1,12 +1,11 @@
 <br>
+
   <%= form_for @product do |f| %>
     <strong> <%= f.label :name %> : </strong>
-    <%= f.text_field :name , size: "50x20" %><br><br><br>
+      <%= f.text_field :name , size: "50x20" %><br><br><br>
     
     <strong> <%= f.label :description %> :</strong>
-    <%= f.text_area :description, size: "70x15" %> <br><br><br>
+      <%= f.text_area :description, size: "70x15" %> <br><br><br>
     
-      <strong> <%= f.submit "Submit" %> </strong>
-    <% end %>
-    
-    <br><br>
+    <strong> <%= f.submit "Submit" %> </strong>
+  <% end %> <br><br>

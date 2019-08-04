@@ -7,11 +7,10 @@
   <% if employee == current_employee %>
 
     Employee ID: <%= employee.id %> <br>
-      Name: <%= link_to employee.name, employee_path(employee) %>
-      <br>
-        Region:  <%= employee.region %>  <br>
-     Job Tilte: <%= employee.position %> <br>
-   Email: <%= employee.email %>   <br>
+      Name: <%= link_to employee.name, employee_path(employee) %> <br>
+      Region:  <%= employee.region %>  <br>
+      Job Tilte: <%= employee.position %> <br>
+      Email: <%= employee.email %>   <br>
 
     <!--<%= button_to "Delete", employee, :method => :delete %><br> --> <br>
 
@@ -19,9 +18,9 @@
 
     Employee ID: <%= employee.id %> <br>
       Name:  <%= employee.name %>  <br>
-       Region:  <%= employee.region %>  <br>
+      Region:  <%= employee.region %>  <br>
       Job Tilte:  <%= employee.position %> <br>
-     Email: <%= employee.email %>  <br>
+      Email: <%= employee.email %>  <br>
 
     <!-- <%= button_to "Delete", employee, :method => :delete %> -->
   <% end %><br>

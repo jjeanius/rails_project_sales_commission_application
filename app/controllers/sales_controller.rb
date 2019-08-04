@@ -30,14 +30,12 @@ class SalesController < ApplicationController
   end  
 
   def update
-    set_sales   
-    
-     if @sales && @sales.update(sales_params)
-     
-       redirect_to @sales
-    else
-      render :edit
-    end
+    set_sales      
+      if @sales && @sales.update(sales_params)     
+        redirect_to @sales
+      else
+        render :edit
+      end
   end
 
   def edit
@@ -47,7 +45,7 @@ class SalesController < ApplicationController
   def destroy
     set_sales
       @sales.destroy
-        redirect_to sales_path
+    redirect_to sales_path
   end
 
   

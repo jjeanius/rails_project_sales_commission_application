@@ -1,18 +1,17 @@
-<br> <br> 
+<br> <br>
 <h5>
 <%= form_for @sales, url: sales_path do |f| %>
- 
-   <div class="action">	
-      <%= f.label :employee_name %> :  <%= current_employee.name %> 
-      <!-- <%= f.collection_select(:employee_id, Employee.all, :id, :name) %> <br> <br> -->     	
-      <%= f.hidden_field :employee_id %> 
-   </div> <br> 
+
+   <div class="action">
+      <%= f.label :employee_name %> :  <%= current_employee.name %>
+      <!-- <%= f.collection_select(:employee_id, Employee.all, :id, :name) %> <br> <br> -->
+      <%= f.hidden_field :employee_id %>
+   </div> <br>
 
    <div class="action">
      <%= f.label :product_name %> :
-      <%= f.collection_select(:product_name, Product.all, :name, :name) %><br><br> 
-     <!-- <%= f.hidden_field :product_id %> --> 
-   </div>
+      <%= f.collection_select(:product_name, Product.all, :name, :name) %><br><br>
+    </div>
 
    <div class="action">
     <%= f.label :product_id %> Number:
@@ -20,7 +19,7 @@
     </div>
 
    <div class="action">
-     <%= f.label :quantity %> : 
+     <%= f.label :quantity %> :
         <%= f.number_field :quantity %> shares  <br><br>
    </div>
 
@@ -34,7 +33,7 @@
         <%= f.number_field :commission_rate %>  bps <br><br>
     </div> <br><br>
 
-      <%= f.submit "Submit" %> 
-     
+    <%= f.submit "Submit" %>
+
 <% end %>
 </h5>

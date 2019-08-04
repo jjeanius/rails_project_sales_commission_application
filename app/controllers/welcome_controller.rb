@@ -6,8 +6,8 @@ class WelcomeController < ApplicationController
     else
       render :home
    end
-
   end
+
 end
 
 

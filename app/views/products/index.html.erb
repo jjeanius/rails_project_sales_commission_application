@@ -1,15 +1,13 @@
 <h5><%= render 'layouts/product_links' %></h5> <br> <br>
 
 <h2> Product List </h2>
-<ol>
-<% @products.each do|product| %> <br>
-  <li> Product Number: <%= product.id %> <br> 
-    Product Name: <%= link_to product.name, product_path(product) %> <br>
-      Product Description: <%= product.description %> <br> <br></li>
-  
-<!-- <%= button_to "Delete", @product, :method => :delete %><br> -->  
+  <ol>
+    <% @products.each do|product| %> <br>
+      <li> Product Number: <%= product.id %> <br>
+      Product Name: <%= link_to product.name, product_path(product) %> <br>
+      Product Description: <%= product.description %> <br> <br>
+      </li>
+        <!-- <%= button_to "Delete", @product, :method => :delete %><br> -->
 
-<% end %>
-</ol>
-<br>
-<br>
+    <% end %>
+  </ol> <br> <br>

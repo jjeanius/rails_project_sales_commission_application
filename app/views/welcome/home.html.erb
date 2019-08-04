@@ -1,24 +1,24 @@
 <h1>   Welcome ! </h1> <br>
 
 
-<% if current_employee  %> 
-  <h4> Category </h4> 
+  <% if current_employee  %> 
 
-  <%= link_to  'Employee Account', employees_path %><br> 
-  <%= link_to 'Product', products_path %> <br> 
-  <%= link_to 'Sales', sales_path %> <br> <br><br> 
+    <h4> Category </h4> 
+      <%= link_to  'Employee Account', employees_path %><br> 
+      <%= link_to 'Product', products_path %> <br> 
+      <%= link_to 'Sales', sales_path %> <br> <br><br> 
 
-<h4> Reports </h4>
+    <h4> Reports </h4>
+      <%= link_to  'Employees', employees_path %><br> 
+      <%= link_to  'Employee Region', region_path %><br> 
+      <%= link_to 'Sales Report', sales_path %> <br> 
+      <%= link_to 'Product Reports', products_path %> <br> <br> 
+      <%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br>
 
-<%= link_to  'Employees', employees_path %><br> 
-<%= link_to  'Employee Region', region_path %><br> 
-<%= link_to 'Sales Report', sales_path %> <br> 
-<%= link_to 'Product Reports', products_path %> <br> <br> 
-<%= link_to 'Sign out', destroy_employee_session_path, method: :delete %><br>
-
-<% else %>
- <h5>
-  <%= link_to 'Sign up', new_employee_registration_path %> <br> <br>
-  <%= link_to 'Sign in', new_employee_session_path %>
-</h5>
-<% end %>
+    <% else %>
+      <h5>
+        <%= link_to 'Sign up', new_employee_registration_path %> <br> <br>
+        <%= link_to 'Sign in', new_employee_session_path %>
+    </h5>
+    
+  <% end %>

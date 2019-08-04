@@ -1,18 +1,14 @@
 
 <h5> <nav class="navbar navbar-light bg-light"></h5>
   <h5> Product Links: </h5> <br>
-
-    
       <%= link_to 'Product List', products_path %>  /
-        <%= link_to 'Create Product', new_product_path %>  /
-         <%= link_to 'Edit Product', edit_product_path %> / 
+      <%= link_to 'Create Product', new_product_path %>  /
+      <%= link_to 'Edit Product', edit_product_path %> / 
       <%= link_to "Delete", @product, :method => :delete %> 
-   
-</nav>
+</h5> </nav>
 <br> <br><br>
 
-<h2> Product information </h2> <br><br>
-    
+<h2> Product information </h2> <br><br>    
   <strong> Product Name: </strong> <%= @product.name %> <br> <br>
     <strong> Product Description: </strong> <%= @product.description %> <br> <br> <br> 
     
