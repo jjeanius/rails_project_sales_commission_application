@@ -14,7 +14,7 @@ class Sales < ApplicationRecord
     self.try(:employee).try(:name)
   end
 
-  def employee_name=(name)
+  def employee_name=(name)  # setter method - sales in initialize with employee_name 
     employee = Employee.find_or_create_by(name: name)
     self.employee = employee
   end

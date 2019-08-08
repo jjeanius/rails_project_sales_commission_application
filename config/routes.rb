@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   devise_for :employees, :controllers =>{:omniauth_callbacks => "callbacks"}  
  
   root 'welcome#home'
-
-  
+ 
   
   resources :employees do
     resources :sales, only: [:show, :index, :new, :edit, :create]
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
   
   delete 'products/:id', to: 'products#destroy'
   
-  get 'employees/auth/:amazon/callback', to: 'employees#index'
+  get 'employees/auth/:amazon/callback', to: 'employees#index' 
 
   patch '/sales/:id', to: 'sales#update'
 
