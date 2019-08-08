@@ -5,12 +5,9 @@
 
   <%= render 'layouts/errors', :target => @sales %> <br>
 
-    <% if current_employee %>
-
-      <%= form_for @sales, :method => :put do |f| %>
+     <%= form_for @sales, :method => :put do |f| %>
 
         <%= render 'form' %>
 
-      <% end %> <br>
 
   <% end %><br> <br> <br>

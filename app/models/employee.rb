@@ -12,8 +12,8 @@ class Employee < ApplicationRecord
 
   # attribute :admin  (for admin only)
 
-  def self.from_omniauth(auth)  # take an argument from auth, data we are recvg from callbacks
-    where(provider: auth.provider, uid: auth.uid).first_or_create! do |employee|   #find the employee record by uid and call the first record or create a new employee by passing a employee block
+  def self.from_omniauth(auth)  
+    where(provider: auth.provider, uid: auth.uid).first_or_create! do |employee|           #find the employee record by uid and call the first record or create a new employee by passing a employee block
       employee.provider = auth.provider
       employee.uid = auth.uid
       employee.email = auth.info.email
