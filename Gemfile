@@ -6,7 +6,7 @@ ruby '2.6.1'
 
 gem 'devise'
 gem 'omniauth-amazon'
-gem 'dotenv-rails'
+gem 'dotenv-rails'  # gem - verify environment is correctly loaded to ENV
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
