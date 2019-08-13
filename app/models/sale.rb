@@ -1,4 +1,4 @@
-class Sales < ApplicationRecord
+class Sale < ApplicationRecord
   belongs_to :employee, optional: true
   belongs_to :product, optional: true
   accepts_nested_attributes_for :employee, allow_destroy: true
@@ -25,6 +25,7 @@ class Sales < ApplicationRecord
 
   def total_commission
     @total_commission =(quantity * sales_rate * commission_rate)/10000
+
   end
 
  end

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'welcome#home'
 
   resources :employees do
-    resources :sales, only: [:show, :new, :create]
+    resources :sales, only: [:show, :new, :create] 
   end
 
   resources :sales

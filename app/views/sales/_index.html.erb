@@ -1,29 +1,29 @@
 <br> <br>
 
-<% @salez.each do |sales| %>
+<% @sales.each do |sale| %>
 
-  <% if current_employee == sales.employee %>
+  <% if current_employee == sale.employee %>
 
-    <strong> Region: </strong> <%= sales.employee.region %> <br>
-      <strong> Employee: </strong> <%= link_to sales.employee_name, employees_path(@employee) %> <br>
-        <strong> Product Name: </strong> <%= link_to sales.product_name, sale_path(sales) %> <br>
-          <strong> Quantity: </strong> <%= sales.quantity %> shares <br>
-            <strong> Sales Rate: </strong> $  <%= sales.sales_rate %> per share <br>
-          <strong> Total Sales: </strong> $ <%= sales.total_sales %><br>
-        <strong> Sales Commission Rate: </strong> <%= sales.commission_rate %> bps <br>
-      <strong> Sales Commission Amount: </strong> $ <%= sales.total_commission %> </li> <br> <br>
-    <!--  <%= button_to "Delete", sales, :method => :delete %><br>  <br>  -->
+    <strong> Region: </strong> <%= sale.employee.region %> <br>
+      <strong> Employee: </strong> <%= link_to sale.employee_name, employees_path(@employee) %> <br>
+        <strong> Product Name: </strong> <%= link_to sale.product_name, sale_path(sale) %> <br>
+          <strong> Quantity: </strong> <%= sale.quantity %> shares <br>
+            <strong> Sales Rate: </strong> $  <%= sale.sales_rate %> per share <br>
+          <strong> Total Sales: </strong> $ <%= sale.total_sales %><br>
+        <strong> Sales Commission Rate: </strong> <%= sale.commission_rate %> bps <br>
+      <strong> Sales Commission Amount: </strong> $ <%= sale.total_commission %> </li> <br> <br>
+    <!--  <%= button_to "Delete", sale, :method => :delete %><br>  <br>  -->
 
   <% else %>
 
-    <strong> Region: </strong> <%= sales.employee.region %> <br>
-      <strong> Employee: </strong> <%= sales.employee_name %> <br>
-        <strong> Product Name: </strong> <%= sales.product_name %> <br>
-          <strong> Quantity: </strong> <%= sales.quantity %> shares <br>
-            <strong> Sales Rate: </strong> $ <%= sales.sales_rate %> per share<br>
-        <strong> Total Sales: </strong> $ <%= sales.total_sales %> <br>
-      <strong> Sales Commission Rate: </strong> <%= sales.commission_rate %> bps <br>
-    <strong> Sales Commission Amount: </strong> $ <%= sales.total_commission %> </li> <br> <br>
+    <strong> Region: </strong> <%= sale.employee.region %> <br>
+      <strong> Employee: </strong> <%= sale.employee_name %> <br>
+        <strong> Product Name: </strong> <%= sale.product_name %> <br>
+          <strong> Quantity: </strong> <%= sale.quantity %> shares <br>
+            <strong> Sales Rate: </strong> $ <%= sale.sales_rate %> per share<br>
+        <strong> Total Sales: </strong> $ <%= sale.total_sales %> <br>
+      <strong> Sales Commission Rate: </strong> <%= sale.commission_rate %> bps <br>
+    <strong> Sales Commission Amount: </strong> $ <%= sale.total_commission %> </li> <br> <br>
 
   <% end %>
 

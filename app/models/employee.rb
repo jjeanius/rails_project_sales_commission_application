@@ -12,7 +12,7 @@ class Employee < ApplicationRecord
 
   # attribute :admin  (for admin only)
 
-  def self.from_omniauth(auth)  
+  def self.from_omniauth(auth)  #find or create an employee matching that hash
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |employee|           #find the employee record by uid and call the first record or create a new employee by passing a employee block
       employee.provider = auth.provider
       employee.uid = auth.uid

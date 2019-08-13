@@ -22,7 +22,7 @@ class EmployeesController < ApplicationController
 
   def show
     set_employee
-      @salez = Sales.all
+      @sales = Sale.all
   end
 
   def edit

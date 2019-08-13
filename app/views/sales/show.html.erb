@@ -1,14 +1,14 @@
 <nav class="navbar navbar-light bg-light"> <br><br>
   <h5> Sale Links:</h5>
     <%= link_to 'Sales Report', sales_path %>  /
-    <%= link_to 'New Sale', new_employee_sale_path(@sales) %> /
+    <%= link_to 'New Sale', new_employee_sale_path(@sale) %> /
     <%= link_to "Edit Sales", edit_sale_path %>  /
     <%= link_to "Delete Sales", @sales, :method => :delete %>
 </nav> <br> <br>
 
 <h2> Sales Report </h2> <br>
 
-<% if current_employee = @sales.employee %>
+<% if current_employee = @sale.employee %>
 
 <table style="width:120%">
   <col align="left">
@@ -30,14 +30,14 @@
         <th> <strong> Commission Amount </strong> </th>
       </tr> <br>
       <tr>
-      <td> <%= @sales.id %> <br>
-        <td> <%= @sales.product_id %> </td>
-          <td> <%= link_to @sales.product_name, @sales  %></td>
-            <td> <%= @sales.quantity %> shares </td>
-            <td> <%= @sales.sales_rate %> per shares </td>
-          <td> $ <%= @sales.total_sales %> </td>
-        <td><%= @sales.commission_rate %> bps </td>
-      <td> $ <%= @sales.total_commission %> </td>
+      <td> <%= @sale.id %> <br>
+        <td> <%= @sale.product_id %> </td>
+          <td> <%= link_to @sale.product_name, @sales  %></td>
+            <td> <%= @sale.quantity %> shares </td>
+            <td> <%= @sale.sales_rate %> per shares </td>
+          <td> $ <%= @sale.total_sales %> </td>
+        <td><%= @sale.commission_rate %> bps </td>
+      <td> $ <%= @sale.total_commission %> </td>
       </tr>
   </table>
 
