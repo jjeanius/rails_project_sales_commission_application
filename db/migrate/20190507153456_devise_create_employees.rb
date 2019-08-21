@@ -8,7 +8,7 @@ class DeviseCreateEmployees < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :position
       t.boolean :admin, :default => false
-      t.string :password_digest
+
 
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""

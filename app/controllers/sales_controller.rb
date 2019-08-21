@@ -26,7 +26,12 @@ class SalesController < ApplicationController
   end
 
   def show
-    set_sale
+    if set_sale
+      render :show
+    else
+      redirect_to '/'
+
+    end
   end
 
   def update
