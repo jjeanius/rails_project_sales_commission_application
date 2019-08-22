@@ -1,4 +1,35 @@
-<%= render 'form' %>
+<%= render 'layouts/employee_links' %> <br>
+
+  <h2> <strong> Scoreboard </strong></h2> <br>
+
+  <% if @employee == current_employee %>
+
+  <h5> Employee Number: <%= @employee.id %></h5> <br>
+    <h5> Name: <%= @employee.name %> </h5><br>
+
+    <h5> Region: <%= @employee.region %> </h5><br>
+
+    <h5> Job Title: <%= @employee.position %></h5> <br>
+    <h5> Email: <%= @employee.email %></h5> <br>
+
+
+======================================================================================================================================================
+<br> <br>
+    <% @employee.sales.each do |sale| %>
+
+      <% if current_employee == sale.employee %>
+
+        <strong> Product Name: </strong> <%= link_to sale.product_name, employee_sale_path(@employee) %> <br>
+          <strong> Quantity: </strong> <%= sale.quantity %> shares <br>
+            <strong> Sales Rate: </strong> $  <%= sale.sales_rate %> per share <br>
+          <strong> Sales Amount: </strong> $ <%= sale.total_sales %><br>
+        <strong> Sales Commission Rate: </strong> <%= sale.commission_rate %> bps <br>
+        <strong> Sales Commission Amount: </strong> $ <%= sale.total_commission %> </li> <br> <br>
+        <!--  <%= button_to "Delete", sale, :method => :delete %><br>  <br>  -->
+      <% end %>
+    <% end %>
+  <% end %>
+
 
 
 

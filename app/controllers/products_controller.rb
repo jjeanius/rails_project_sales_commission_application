@@ -12,12 +12,11 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-
-    if @product && @product.save
-      redirect_to @product
-    else
-      render :new
-    end
+      if @product.save
+        redirect_to @product
+      else
+        render :new
+      end
   end
 
   def show
@@ -37,11 +36,11 @@ class ProductsController < ApplicationController
     end
   end
 
-
   def destroy
     Product.find(params[:id]).destroy
       redirect_to products_path
   end
+
 
   private
 

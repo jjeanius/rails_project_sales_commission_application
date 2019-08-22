@@ -11,7 +11,7 @@ class EmployeesController < ApplicationController
 
   def create
     @employee = Employee.new(employee_params)
-      if @employee && @employee.save
+      if @employee.save
         session[:employee_id] = @employee.id
           redirect_to employee_path(@employee)
       else
@@ -33,7 +33,7 @@ class EmployeesController < ApplicationController
 
   def update
     set_employee
-      if @employee && @employee.update(employee_params)
+      if @employee.update(employee_params)
         redirect_to @employee
       else
         render :edit
@@ -60,7 +60,6 @@ private
   def employee_params
     params.require(:employee).permit(:name, :region, :position, :email, :password, :password_confirmation, :password_digest, :admin)
   end
-
 
 end
 
