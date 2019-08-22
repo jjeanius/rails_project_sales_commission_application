@@ -26,12 +26,7 @@ class SalesController < ApplicationController
   end
 
   def show
-    if set_sale
-      render :show
-    else
-      redirect_to '/'
-
-    end
+    set_sale
   end
 
   def update
@@ -54,11 +49,13 @@ class SalesController < ApplicationController
   end
 
 
-
   private
 
   def set_sale
-    @sale = Sale.find_by(id: params[:id])
+    if @sale = Sale.find_by(id: params[:id])
+    else
+      render :index
+    end
   end
 
   def sale_params
