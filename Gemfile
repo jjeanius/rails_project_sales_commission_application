@@ -8,7 +8,7 @@ gem 'devise'
 gem 'omniauth-amazon'
 gem 'dotenv-rails'  # gem - verify environment is correctly loaded to ENV
 
-
+gem "nokogiri", ">= 1.10.4"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
@@ -34,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
- gem 'bcrypt', '~> 3.1.7' 
+ gem 'bcrypt', '~> 3.1.7'
  gem 'pry'
 
 

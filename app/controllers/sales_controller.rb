@@ -39,7 +39,7 @@ class SalesController < ApplicationController
       if @sale.update(sale_params)
         redirect_to @sale
       else
-        render :home
+        render :edit
       end
   end
 
