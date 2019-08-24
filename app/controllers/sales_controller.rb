@@ -52,9 +52,9 @@ class SalesController < ApplicationController
   private
 
   def set_sale
-    if @sale = Sale.find_by(id: params[:id])
-    else
-      render :index
+    @sale = Sale.find_by(id: params[:id])
+      if !@sale
+        redirect_to sales_path
     end
   end
 

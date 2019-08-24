@@ -17,17 +17,14 @@
 <br> <br>
     <% @employee.sales.each do |sale| %>
 
-      <% if current_employee == sale.employee %>
-
-        <strong> Product Name: </strong> <%= link_to sale.product_name, employee_sale_path(@employee) %> <br>
+       <strong> Product Name: </strong> <%= link_to sale.product_name, employee_sale_path(@employee) %> <br>
           <strong> Quantity: </strong> <%= sale.quantity %> shares <br>
             <strong> Sales Rate: </strong> $  <%= sale.sales_rate %> per share <br>
           <strong> Sales Amount: </strong> $ <%= sale.total_sales %><br>
         <strong> Sales Commission Rate: </strong> <%= sale.commission_rate %> bps <br>
         <strong> Sales Commission Amount: </strong> $ <%= sale.total_commission %> </li> <br> <br>
         <!--  <%= button_to "Delete", sale, :method => :delete %><br>  <br>  -->
-      <% end %>
-    <% end %>
+     <% end %>
   <% end %>
 
 

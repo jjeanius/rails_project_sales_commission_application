@@ -2,16 +2,24 @@ require 'pry'
 
 module SalesHelper
 
- # def employee_id_field(sales)
- #   if sales.employee.nil?
-  #    select_tag "sales[employee_id", options_from_collection_for_select(Employee.all, :id, :name)
-  #  else
-  #    hidden_field_tag "sales[employee_id", sales.employee_id
-  #  end
- # end
+def display_employee_name(sale)
+  if current_employee == sale.employee
+    link_to sale.employee_name, employees_path(@employee)
+  else
+    sale.employee_name
+  end
+end
 
- def calculate_sales
-  @total_sales = quantity * sales_rate 
+  def display_product_name(sale)
+    if current_employee == sale.employee
+      link_to sale.product_name, sale_path(sale)
+    else
+      sale.product.name
+    end
+  end
+
+def calculate_sales
+  @total_sales = quantity * sales_rate
 end
 
 def calculate_commission

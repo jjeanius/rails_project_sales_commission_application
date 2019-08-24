@@ -20,11 +20,7 @@ class EmployeesController < ApplicationController
   end
 
   def show
-    if set_employee
-      @employee.sales
-    else
-      render :welcome
-    end
+    set_employee
   end
 
   def edit
@@ -52,10 +48,13 @@ class EmployeesController < ApplicationController
 private
 
   def set_employee
-    if current_employee
-      @employee = Employee.find_by(id: params[:id])
+    # if current_employee
+    @employee = Employee.find_by(id: params[:id])
+    if !@employee
+      redirect_to employees_path
     end
-  end
+   end
+
 
   def employee_params
     params.require(:employee).permit(:name, :region, :position, :email, :password, :password_confirmation, :password_digest, :admin)
