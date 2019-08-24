@@ -20,6 +20,7 @@ Specs:
     sales migration table has attribute other than the foreign keys
 
 - [x] Include reasonable validations for simple model objects:
+  Here are the validations for the three models: 
 
     1. class Employee < ApplicationRecord
         validates_uniqueness_of :email, presence: true
