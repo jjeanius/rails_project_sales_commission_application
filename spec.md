@@ -45,7 +45,7 @@ Specs:
   The class level ActiveRecord scope method for this application is region
 
 - [x] Include signup
-    Devise 
+    Devise
 
 - [x] Include login
     Devise and OmniAuth Amazon
@@ -63,11 +63,17 @@ Specs:
 - [x] Include nested resource "new" form
     The nested resource new page is:
         URL /employees/1/sales/new
-        
+
 - [x] Include form display of validation errors
+     The validation errors is in views/layouts.html.erb file
+
 
 Confirm:
 - [x] The application is pretty DRY
 - [x] Limited logic in controllers
 - [x] Views use helper methods if appropriate
 - [x] Views use partials if appropriate
+    
+    a) Partials were created
+    b) Business logic were implemented in the models
+    c) Helper methods are created
