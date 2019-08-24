@@ -18,14 +18,5 @@ end
     end
   end
 
-def calculate_sales
-  @total_sales = quantity * sales_rate
-end
-
-def calculate_commission
-@total_commission = quantity * sales_rate * commission_rate/100
-end
-
-
 end
 

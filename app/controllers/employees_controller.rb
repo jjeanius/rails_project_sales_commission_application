@@ -48,12 +48,11 @@ class EmployeesController < ApplicationController
 private
 
   def set_employee
-    # if current_employee
     @employee = Employee.find_by(id: params[:id])
-    if !@employee
-      redirect_to employees_path
-    end
-   end
+      if !@employee
+        redirect_to employees_path
+      end
+  end
 
 
   def employee_params
