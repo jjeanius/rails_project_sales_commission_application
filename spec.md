@@ -43,14 +43,27 @@ Specs:
 
 - [x] Include a class level ActiveRecord scope method
   The class level ActiveRecord scope method for this application is region
-- [x] Include signup (how e.g. Devise)
-- [x] Include login (how e.g. Devise)
-- [x] Include logout (how e.g. Devise)
+
+- [x] Include signup
+    Devise 
+
+- [x] Include login
+    Devise and OmniAuth Amazon
+
+- [x] Include logout and password
+    Devise
+
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth)
+    OmniAuth Amazon
+
 - [x] Include nested resource show or index
+    The nested resource show page is:
         URL /employees/1/sales/1
+
 - [x] Include nested resource "new" form
+    The nested resource new page is:
         URL /employees/1/sales/new
+        
 - [x] Include form display of validation errors
 
 Confirm:
