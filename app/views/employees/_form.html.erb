@@ -1,11 +1,5 @@
-<%= render 'layouts/employee_links' %> <br>
 
-<h3> Employee List </h3> <br> <br>
 <% @employees.each do |employee| %>
- <%= render 'form' %>
- <% end %>
-
- <!-- <% @employees.each do |employee| %>
     Employee ID: <%= employee.id %> <br>
       Name: <%= disaplay_employee_name(employee) %> <br>
         Region:  <%= employee.region %>  <br>

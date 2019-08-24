@@ -4,9 +4,9 @@ The following are some of the guidelines for my application:
 
 1)	The application is based on my own work experience which I have incorporated into the application’s functionalities;
 
-2)	The application incorporates the CRUD principle and it tracks sales and calculate commission; 
+2)	The application incorporates the CRUD principle and it tracks sales and calculate commission;
 
-3)	The application is flexible so as allow the user to incorporate business rules and updated base and the company’s objective.  Presently, my application is based on the financial asset management business but can be easily adapted to other business models (e.g., expanding sales staff or adding new products).  
+3)	The application is flexible so as allow the user to incorporate business rules and updated base and the company’s objective.  Presently, my application is based on the financial asset management business but can be easily adapted to other business models (e.g., expanding sales staff or adding new products).
 
 Built with Ruby on Rails
 
@@ -20,7 +20,6 @@ Built with Ruby on Rails
 
 <strong> Notes </strong>
 <p>•	This application implements: Devise gem to authenticate users and allow them to log in;  create user by using OmniAuth Amazon. </p>  <p>I picked Amazon as my OmniAuth identification provider over facebook, Twritter and Google because, my assumption is that employees like to keep their social media outlets private and most would not be comfortable to use their social media login to access their company’s system.   Also, I think given Amazon’s sales-oriented culture, it makes sense for this type of company to have horizontal expansion into a very different segment of the consumer market.  </p>
-<p>•	“sales” is referred to as a  singular sale, while “salez” is created and use as a plural form of sales </p>
 
 <strong> Contributer's Guide </strong>
 

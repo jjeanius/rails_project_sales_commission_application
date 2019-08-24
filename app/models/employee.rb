@@ -21,7 +21,6 @@ class Employee < ApplicationRecord
   end
 end
 
-
 scope :region, -> {where('region="New York"')}
 
 end

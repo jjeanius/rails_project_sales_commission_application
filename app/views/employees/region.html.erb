@@ -6,29 +6,20 @@
     <a class="nav-item nav-link active"> <%= link_to "New Sales", new_employee_sale_path(current_employee) %></a>
 </nav> <br> <br>
 
-<h2> Employee List </h2> <br> <br>
+  <h2> Employee List </h2> <br> <br>
 
   <% @employee.each do |employee| %>
 
-    <% if employee == current_employee %>
+  <% employee == current_employee %>
 
       Employee ID: <%= employee.id %> <br>
-        Name: <%= link_to employee.name, employee_path(employee) %> <br>
+        Name: <%= link_to disaplay_employee_name(employee) %> <br>
         Region:  <%= employee.region %>  <br>
         Job Tilte: <%= employee.position %> <br>
         Email: <%= employee.email %>   <br>
     <!--<%= button_to "Delete", employee, :method => :delete %><br> --> <br>
 
-    <% else %>
-
-      Employee ID: <%= employee.id %> <br>
-        Name:  <%= employee.name %>  <br>
-        Region:  <%= employee.region %>  <br>
-        Job Tilte:  <%= employee.position %> <br>
-        Email: <%= employee.email %>  <br>
-      <!-- <%= button_to "Delete", employee, :method => :delete %> --><br>  <br>
-
-    <% end %> <br>
+   <br>
 
 <% end %>
 
