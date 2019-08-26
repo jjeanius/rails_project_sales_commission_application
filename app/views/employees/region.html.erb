@@ -21,4 +21,29 @@
 
 <% end %>
 
+<!--
+
+Please pick a region:
+<%= form_for @employee, url: region_path do |f| %>
+
+<div class="action">
+<%= f.label "region" %>
+<% f.collection_se>
+
+   <div class="action">
+      <%= f.label :employee_name %> :  <%= current_employee.name %>
+      <!-- <%= f.collection_select(:employee_id, Employee.all, :id, :name) %> <br> <br> -->
+      <%= f.hidden_field :employee_id %>
+   </div> <br>
+
+
+
+
+
+
+
+
+
+>
+
 

@@ -93,7 +93,7 @@ Here are the “has_many through” relationships:
 Confirm:
 
 •   The application is DRY
-        Partials were created and helper methods were created
+        Partials were created; helper methods were created and private methods also were created
 
 •   Limited logic in controllers
 	    Business logic were implemented tin the models
