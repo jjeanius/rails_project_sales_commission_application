@@ -17,8 +17,7 @@ class SalesController < ApplicationController
   end
 
   def create
-    @sale = current_employee.sales.build(sale_params)
-   # @sale = Sale.new(sale_params) #  update the sales_params to accept employee_id
+    @sale = current_employee.sales.build(sale_params) #  update the sales_params to accept employee_id
       if @sale.save
         redirect_to @sale
       else
