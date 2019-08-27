@@ -24,8 +24,10 @@ class Sale < ApplicationRecord
   end
 
   def total_commission
-    @total_commission =(quantity * sales_rate * commission_rate)/10000
+    @total_commission =(quantity * sales_rate )/10000 * commission_rate
 
   end
+
+  scope :quantity, -> {order('quantity DESC')}
 
  end

@@ -17,7 +17,8 @@ class SalesController < ApplicationController
   end
 
   def create
-    @sale = Sale.new(sale_params) #  update the sales_params to accept employee_id
+    @sale = current_employee.sales.build(sale_params)
+   # @sale = Sale.new(sale_params) #  update the sales_params to accept employee_id
       if @sale.save
         redirect_to @sale
       else
@@ -48,6 +49,11 @@ class SalesController < ApplicationController
     redirect_to sales_path
   end
 
+  def quantity
+    @sales = Sale.all.quantity
+
+  end
+
 
   private
 
@@ -59,7 +65,7 @@ class SalesController < ApplicationController
   end
 
   def sale_params
-    params.require(:sale).permit(:employee_id, :product_id, :product_name, :quantity, :sales_rate, :commission_rate, :commission_amount)
+    params.require(:sale).permit(:product_id, :product_name, :quantity, :sales_rate, :commission_rate, :commission_amount)
   end
 
 end
