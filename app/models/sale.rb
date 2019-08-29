@@ -30,4 +30,6 @@ class Sale < ApplicationRecord
 
   scope :quantity, -> {order('quantity DESC')}
 
+  scope :highest_commission, -> {order('commission_amount DESC').limit(1)}
+
  end

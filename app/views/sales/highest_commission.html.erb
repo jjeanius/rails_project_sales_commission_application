@@ -1,0 +1,35 @@
+
+<h3> Highest Commission </h3>
+
+<table style="width:120%">
+  <col align="left">
+  <col align="left">
+  <col align="left">
+  <col align="center">
+  <col align="center">
+  <col align="right">
+  <col align="right">
+  <col align="right">
+    <tr>
+    <th> <strong> Sales ID </strong> </th>
+      <th> <strong> Product ID </strong> </th>
+        <th> <strong> Product Name </strong> </th>
+          <th> <strong> Quantity </strong> </th>
+            <th> <strong> Sales Rate </strong> </th>
+          <th> <strong> Total Sales </strong> </th>
+        <th> <strong> Commission Rate </strong> </th>
+        <th> <strong> Commission Amount </strong> </th>
+      </tr> <br>
+      <tr>
+      <td> <%= @sale.id %> <br>
+        <td> <%= @sale.product_id %> </td>
+          <td> <%= link_to @sale.product_name, @sales  %></td>
+            <td> <%= @sale.quantity %> shares </td>
+            <td> <%= @sale.sales_rate %> per shares </td>
+          <td> $ <%= @sale.total_sales %> </td>
+        <td><%= @sale.commission_rate %> bps </td>
+      <td> $ <%= @sale.total_commission %> </td>
+      </tr>
+  </table>
+
+

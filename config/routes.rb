@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'sales/highest_commission', to: 'sales#highest_commission'
+  
   get 'sales/quantity', to: 'sales#quantity'
+
 
   devise_for :employees, :controllers =>{:omniauth_callbacks => "callbacks"}
 

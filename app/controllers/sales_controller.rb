@@ -13,7 +13,7 @@ class SalesController < ApplicationController
 
   def new
     @sale = Sale.new
-      @sale = Sale.new(employee_id: params[:employee_id], product_id: params[:product_id])     #  capture employee_id and product id through nested route
+    @sale = Sale.new(employee_id: params[:employee_id], product_id: params[:product_id])     #  capture employee_id and product id through nested route
   end
 
   def create
@@ -23,6 +23,10 @@ class SalesController < ApplicationController
       else
         render :new
     end
+  end
+
+  def highest_commission
+    @sale = Sale.highest_commission.first
   end
 
   def show
@@ -50,11 +54,11 @@ class SalesController < ApplicationController
 
   def quantity
     @sales = Sale.all.quantity
-
   end
 
 
-  private
+
+ private
 
   def set_sale
     @sale = Sale.find_by(id: params[:id])
