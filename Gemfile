@@ -7,6 +7,7 @@ ruby '2.6.1'
 gem 'devise'
 gem 'omniauth-amazon'
 gem 'dotenv-rails'  # gem - verify environment is correctly loaded to ENV
+gem "rack", ">= 2.0.8"
 
 gem "nokogiri", ">= 1.10.4"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -14,7 +15,10 @@ gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+
+#gem 'puma', '~> 3.11'
+gem "puma", ">= 3.12.2"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'  # end of life instead
 #gem 'sassc'
